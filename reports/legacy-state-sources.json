@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/html/2503.14456v2",
+      "title": "Peng et al. · RWKV-7 “Goose”, §3",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "generalized formulation of the delta rule with vector-valued gating and in-context learning rates",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://github.com/BlinkDL/RWKV-LM/blob/2eebb381a6160837ac45896c60d6963ef3cda929/RWKV-v7/rwkv_v7_demo_rnn.py",
+      "title": "BlinkDL · x070 reference RNN / RWKV_RNN.forward & time_mixing__",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "state = state * w.view(H,1,N) + state @ ab.float() + vk.float()",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "w = torch.exp(-0.606531 * torch.sigmoid(w))",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://github.com/BlinkDL/RWKV-LM/blob/2eebb381a6160837ac45896c60d6963ef3cda929/RWKV-v7/rwkv_v7_demo_fast.py",
+      "title": "BlinkDL · x070 fast inference / sequence and single-token paths",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "w = -torch.nn.functional.softplus(-(w0 + w)) - 0.5",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "xx = RWKV7_OP(state, r, w, k, v, -kk, kk*a)",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://github.com/BlinkDL/RWKV-LM/blob/2eebb381a6160837ac45896c60d6963ef3cda929/RWKV-v7/cuda/wkv7s.cu",
+      "title": "BlinkDL · wkv7s CUDA kernel",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "w[i] = __expf(-__expf(float(_w[t])));",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "assert(B == 1); // only for B=1",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://arxiv.org/abs/2305.10250",
+      "title": "Zhong et al. · MemoryBank",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "inspired by the Ebbinghaus Forgetting Curve theory",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://arxiv.org/html/2504.05097v1",
+      "title": "State Tuning · State-based Test-Time Scaling on RWKV-7",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "optimize it directly for the target task while keeping all pre-trained weights fixed.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://github.com/xiaowu0162/LongMemEval/blob/9e0b455f4ef0e2ab8f2e582289761153549043fc/README.md",
+      "title": "Wu et al. · LongMemEval v1, official benchmark and data format",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "We release 500 high quality questions to test five core long-term memory abilities:",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "This label is used for turn-level memory recall accuracy evaluation.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://faiss.ai",
+      "title": "Faiss · documentation",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "Faiss is a library for efficient similarity search and clustering of dense vectors.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.sqlite.org/wal.html",
+      "title": "SQLite · Write-Ahead Logging, §2.3 performance",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "Writers sync the WAL on every transaction commit if PRAGMA synchronous is set to FULL",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://huggingface.co/BlinkDL/rwkv-7-world/tree/2c0ebae3b3a784e690e3d46bf545ecf44deceb10",
+      "title": "BlinkDL · RWKV-7 World, model card and weights",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "RWKV-x070-World-0.4B-v2.9-20250107-ctx4096.pth Safe pickle",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://github.com/BlinkDL/Albatross/blob/545dd1870ea6cf424d7f7d4da16b7f87491405db/README.md",
+      "title": "BlinkDL · Albatross inference engine",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "new [K,V] state layout.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://github.com/BlinkDL/RWKV-LM/blob/2eebb381a6160837ac45896c60d6963ef3cda929/RWKV-v8/README.md",
+      "title": "BlinkDL · RWKV-8 Heron with ROSA",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "ROSA (Rapid Online Suffix Automaton)",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://arxiv.org/pdf/2304.03442",
+      "title": "Park et al. · Generative Agents, memory retrieval",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "To calculate the final retrieval score, we normalize the recency,",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "The retrieval function scores all memories as a weighted",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://arxiv.org/html/2601.07861v1",
+      "title": "EmbeddingRWKV · State-Centric Retrieval with Reusable States",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "a unified model that serves as both an embedding model and a state backbone for extracting compact, reusable states.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://api.github.com/repos/BlinkDL/Albatross/git/trees/545dd1870ea6cf424d7f7d4da16b7f87491405db?recursive=1",
+      "title": "BlinkDL · Albatross recursive tree at fixed commit",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "\"path\": \"_ref_slower_/reference/rwkv7.py\", \"mode\": \"100644\"",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://huggingface.co/api/models/BlinkDL/rwkv-7-world/tree/2c0ebae3b3a784e690e3d46bf545ecf44deceb10",
+      "title": "BlinkDL · World checkpoint sizes and LFS SHA-256 at fixed revision",
+      "accessed": "2026-11-18",
+      "quotes": [
+        {
+          "text": "\"size\": 901794466, \"lfs\": {",
+          "added": "2026-11-18"
+        }
+      ]
+    }
+  ]
+}

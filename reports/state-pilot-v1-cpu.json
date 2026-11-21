@@ -1,0 +1,1500 @@
+{
+  "scope": "pretrained, curated dialogue pilot; no retrieval or generated replies",
+  "fixture": "state-pilot-v1",
+  "fixture_sha256": "243ad6bd3b2ae05fc71d6d975455be021085b777278f119ba9a87b71a10b0cc8",
+  "policy": "priority-v1-proposal",
+  "token_budget": 24,
+  "runtime": {
+    "checkpoint_sha256": "e10d7b1930c2644c5c6b194444774d6d82ec8212a78763493149de09aac7d83f",
+    "source_sha256": {
+      "chatrwkv_x070_model.py": "75482aee89a08d2a8c8dbe628110b317fc8d0974ddffbaa52aa19190667305e0",
+      "rwkv_tokenizer.py": "963ed277d1f0d3a110ccb9ccabed529595ca409011ff676c8f0d58a4b004dedd",
+      "rwkv_vocab_v20230424.txt": "e6dee3d4e31b4d5c40ac99508ac6c701ceef4bed681bf2167ce9a908552bca89"
+    },
+    "appraisal_version": "constrained-two-grades-v1",
+    "strategy": "cpu fp32",
+    "threads": 4,
+    "torch": "2.15.0+cpu",
+    "layers": 12
+  },
+  "summary": {
+    "cases": 4,
+    "rounds": 13,
+    "labeled_rounds": 13,
+    "rounds_with_prior_cards": 8,
+    "expected_count": 13,
+    "expected_kept": {
+      "read_only": 9,
+      "feedback": 9
+    },
+    "selection_changes": 0,
+    "rating_changes": 0,
+    "pending": {
+      "read_only": 0,
+      "feedback": 0
+    },
+    "retention_delta": {
+      "labeled_round_wins": 0,
+      "labeled_round_losses": 0,
+      "labeled_round_ties": 13
+    },
+    "feedback_card_tokens": 110,
+    "rebuilds": {
+      "eviction": 2,
+      "retirement": 1
+    },
+    "live_replay_exact": true
+  },
+  "cases": [
+    {
+      "id": "real-handoff",
+      "rounds": [
+        {
+          "turn": 1,
+          "read_only": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "expected": [
+            "checklist"
+          ],
+          "had_feedback_at_appraisal": false,
+          "writes": [
+            "checklist"
+          ],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 17
+        },
+        {
+          "turn": 2,
+          "read_only": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "expected": [
+            "handoff"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 0
+        },
+        {
+          "turn": 3,
+          "read_only": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "expected": [
+            "handoff"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 0
+        }
+      ],
+      "live_replay_exact": true,
+      "card_token_lengths": {
+        "checklist": 17,
+        "handoff": 15
+      }
+    },
+    {
+      "id": "fictional-handoff",
+      "rounds": [
+        {
+          "turn": 1,
+          "read_only": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "expected": [
+            "checklist"
+          ],
+          "had_feedback_at_appraisal": false,
+          "writes": [
+            "checklist"
+          ],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 17
+        },
+        {
+          "turn": 2,
+          "read_only": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "expected": [
+            "checklist"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 0
+        },
+        {
+          "turn": 3,
+          "read_only": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "checklist"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "checklist",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "handoff",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "checklist": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "Keep the packing checklist at the desk until Friday.",
+                "used_evidence_turn": 1
+              },
+              "handoff": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "Nine works for me.",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "expected": [
+            "checklist"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 0
+        }
+      ],
+      "live_replay_exact": true,
+      "card_token_lengths": {
+        "checklist": 17,
+        "handoff": 15
+      }
+    },
+    {
+      "id": "deadline-correction",
+      "rounds": [
+        {
+          "turn": 1,
+          "read_only": {
+            "selected": [
+              "coffee"
+            ],
+            "used_tokens": 13,
+            "scores": [
+              {
+                "memory_id": "coffee",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "report-nine",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-nine": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The weekly report is due Mondays at nine.",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "coffee"
+            ],
+            "used_tokens": 13,
+            "scores": [
+              {
+                "memory_id": "coffee",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "report-nine",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-nine": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The weekly report is due Mondays at nine.",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "expected": [
+            "report-nine"
+          ],
+          "had_feedback_at_appraisal": false,
+          "writes": [
+            "coffee"
+          ],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 13
+        },
+        {
+          "turn": 2,
+          "read_only": {
+            "selected": [
+              "report-nine"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "report-nine",
+                "priority_score": 30.0,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.2,
+                "recency": 1.0,
+                "distinct_user_mentions": 2,
+                "scored_at": "2026-01-02T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "coffee",
+                "priority_score": 27.206777,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.97716,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-02T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-nine": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "the Monday deadline stays at nine",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "report-nine"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "report-nine",
+                "priority_score": 30.0,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.2,
+                "recency": 1.0,
+                "distinct_user_mentions": 2,
+                "scored_at": "2026-01-02T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "coffee",
+                "priority_score": 27.206777,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.97716,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-02T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-nine": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "the Monday deadline stays at nine",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "expected": [
+            "report-nine"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [
+            "report-nine"
+          ],
+          "rebuilds": [
+            "eviction"
+          ],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 17
+        },
+        {
+          "turn": 3,
+          "read_only": {
+            "selected": [
+              "report-ten"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "report-ten",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-04T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "coffee",
+                "priority_score": 26.103603,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.933033,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-04T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-ten": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 3,
+                "quote": "the weekly report is due Mondays at ten",
+                "used_evidence_turn": 3
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "report-ten"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "report-ten",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-04T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "coffee",
+                "priority_score": 26.103603,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.933033,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-04T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-ten": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 3,
+                "quote": "the weekly report is due Mondays at ten",
+                "used_evidence_turn": 3
+              }
+            }
+          },
+          "expected": [
+            "report-ten"
+          ],
+          "had_feedback_at_appraisal": false,
+          "writes": [
+            "report-ten"
+          ],
+          "rebuilds": [
+            "retirement"
+          ],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 17
+        },
+        {
+          "turn": 4,
+          "read_only": {
+            "selected": [
+              "report-ten"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "report-ten",
+                "priority_score": 26.648818,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.954842,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-06T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "coffee",
+                "priority_score": 25.050246,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.890899,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-06T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-ten": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 3,
+                "quote": "the weekly report is due Mondays at ten",
+                "used_evidence_turn": 3
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "report-ten"
+            ],
+            "used_tokens": 17,
+            "scores": [
+              {
+                "memory_id": "report-ten",
+                "priority_score": 26.648818,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.954842,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-06T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "coffee",
+                "priority_score": 25.050246,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.890899,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-06T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "coffee": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The lobby coffee was disappointing.",
+                "used_evidence_turn": 1
+              },
+              "report-ten": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 3,
+                "quote": "the weekly report is due Mondays at ten",
+                "used_evidence_turn": 3
+              }
+            }
+          },
+          "expected": [
+            "report-ten"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 0
+        }
+      ],
+      "live_replay_exact": true,
+      "card_token_lengths": {
+        "coffee": 13,
+        "report-nine": 17,
+        "report-ten": 17
+      }
+    },
+    {
+      "id": "personal-milestone",
+      "rounds": [
+        {
+          "turn": 1,
+          "read_only": {
+            "selected": [
+              "poster"
+            ],
+            "used_tokens": 15,
+            "scores": [
+              {
+                "memory_id": "poster",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "scholarship",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "poster": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The hallway poster was printed in blue.",
+                "used_evidence_turn": 1
+              },
+              "scholarship": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "I'm thrilled I got the community scholarship!",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "poster"
+            ],
+            "used_tokens": 15,
+            "scores": [
+              {
+                "memory_id": "poster",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "scholarship",
+                "priority_score": 27.777778,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 1.0,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "poster": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The hallway poster was printed in blue.",
+                "used_evidence_turn": 1
+              },
+              "scholarship": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "I'm thrilled I got the community scholarship!",
+                "used_evidence_turn": 1
+              }
+            }
+          },
+          "expected": [
+            "scholarship"
+          ],
+          "had_feedback_at_appraisal": false,
+          "writes": [
+            "poster"
+          ],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 15
+        },
+        {
+          "turn": 2,
+          "read_only": {
+            "selected": [
+              "scholarship"
+            ],
+            "used_tokens": 14,
+            "scores": [
+              {
+                "memory_id": "scholarship",
+                "priority_score": 30.0,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.2,
+                "recency": 1.0,
+                "distinct_user_mentions": 2,
+                "scored_at": "2026-01-03T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "poster",
+                "priority_score": 26.648818,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.954842,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-03T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "poster": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The hallway poster was printed in blue.",
+                "used_evidence_turn": 1
+              },
+              "scholarship": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "I still can't believe I got the scholarship. I'm so happy!",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "scholarship"
+            ],
+            "used_tokens": 14,
+            "scores": [
+              {
+                "memory_id": "scholarship",
+                "priority_score": 30.0,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.2,
+                "recency": 1.0,
+                "distinct_user_mentions": 2,
+                "scored_at": "2026-01-03T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "poster",
+                "priority_score": 26.648818,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.954842,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-01-03T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "poster": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The hallway poster was printed in blue.",
+                "used_evidence_turn": 1
+              },
+              "scholarship": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "I still can't believe I got the scholarship. I'm so happy!",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "expected": [
+            "scholarship"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [
+            "scholarship"
+          ],
+          "rebuilds": [
+            "eviction"
+          ],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 14
+        },
+        {
+          "turn": 3,
+          "read_only": {
+            "selected": [
+              "scholarship"
+            ],
+            "used_tokens": 14,
+            "scores": [
+              {
+                "memory_id": "scholarship",
+                "priority_score": 17.792174,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.2,
+                "recency": 0.511687,
+                "distinct_user_mentions": 2,
+                "scored_at": "2026-02-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "poster",
+                "priority_score": 14.992277,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.48858,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-02-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "poster": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The hallway poster was printed in blue.",
+                "used_evidence_turn": 1
+              },
+              "scholarship": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "I still can't believe I got the scholarship. I'm so happy!",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "feedback": {
+            "selected": [
+              "scholarship"
+            ],
+            "used_tokens": 14,
+            "scores": [
+              {
+                "memory_id": "scholarship",
+                "priority_score": 17.792174,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.2,
+                "recency": 0.511687,
+                "distinct_user_mentions": 2,
+                "scored_at": "2026-02-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              },
+              {
+                "memory_id": "poster",
+                "priority_score": 14.992277,
+                "importance": 0.0,
+                "explicit_user_importance": null,
+                "model_assessed_importance": 0.0,
+                "emotion_intensity": 0.0,
+                "repetition": 0.111111,
+                "recency": 0.48858,
+                "distinct_user_mentions": 1,
+                "scored_at": "2026-02-01T00:00:00+00:00",
+                "policy_version": "priority-v1-proposal"
+              }
+            ],
+            "pending": [],
+            "appraisal": {
+              "poster": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 1,
+                "quote": "The hallway poster was printed in blue.",
+                "used_evidence_turn": 1
+              },
+              "scholarship": {
+                "importance": 0,
+                "emotion": 0,
+                "evidence_turn": 2,
+                "quote": "I still can't believe I got the scholarship. I'm so happy!",
+                "used_evidence_turn": 2
+              }
+            }
+          },
+          "expected": [
+            "scholarship"
+          ],
+          "had_feedback_at_appraisal": true,
+          "writes": [],
+          "rebuilds": [],
+          "restored_before_assessment": [],
+          "feedback_card_tokens": 0
+        }
+      ],
+      "live_replay_exact": true,
+      "card_token_lengths": {
+        "poster": 15,
+        "scholarship": 14
+      }
+    }
+  ]
+}

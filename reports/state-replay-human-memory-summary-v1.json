@@ -1,0 +1,115 @@
+{
+  "version": "state-replay-human-memory-summary-v1",
+  "primary_goal": "human preference for what to retain and when to use it; answer accuracy is secondary",
+  "primary_human_endpoint": "blinded human preference over complete dialogue memory use behavior; retention choice is an intermediate observation",
+  "primary_human_endpoint_measured": false,
+  "answer_accuracy_measured": false,
+  "human_ratings_collected": false,
+  "human_rating_packet": {
+    "cases": 7,
+    "cases_with_strategy_distinguishing_card_sets": 2,
+    "cases_with_identical_or_empty_card_sets": 5,
+    "distinguishable_cases": [3, 4],
+    "ratings_collected": false
+  },
+  "model": {
+    "checkpoint": "RWKV-7-G1D-0.1B-20260129-ctx8192",
+    "checkpoint_sha256": "e10d7b1930c2644c5c6b194444774d6d82ec8212a78763493149de09aac7d83f",
+    "source": "pinned ChatRWKV x070",
+    "runtime": "CPU fp32; PyTorch 2.15.0+cpu; four threads",
+    "appraisal_version": "four-dimension-model-appraisal-v3-contextual",
+    "dimensions": ["importance", "user_emotional_intensity", "repeated_independent_user_mentions", "recency"]
+  },
+  "arms": {
+    "read_only": "full dialogue state; score on disposable forks",
+    "replacement": "rebuild from latest three completed exchanges plus current user turn and carried valid cards",
+    "feedback": "continue appraisal state; write selected cards at a clean turn boundary"
+  },
+  "token_budget": 24,
+  "candidate_generation_scope": "fixture-supplied cards, quotes, item mapping, and versions; raw-dialogue extraction/attribution/deduplication/version detection not evaluated",
+  "short_pilot": {
+    "fixture": "state-pilot-v2-human-preference",
+    "fixture_sha256": "022c85037584d869768dfb2555bc060d22439c947d3eb7b730e383b6c5a40490",
+    "cases": 4,
+    "rounds": 13,
+    "label_source": "curator hypotheses only",
+    "curator_hypothesis_hits": {"read_only": "4/13", "replacement": "3/13", "feedback": "2/13"},
+    "pending_candidate_ratings": {"read_only": 9, "replacement": 9, "feedback": 11},
+    "selection_different_rounds": {"replacement_vs_read_only": 1, "feedback_vs_read_only": 2, "feedback_vs_replacement": 1},
+    "card_order_changes_between_turns": {"read_only": 0, "replacement": 0, "feedback": 0},
+    "score_tie_groups": {
+      "read_only": {"groups": 1, "zero_score_groups": 0, "affected_turns": 1},
+      "replacement": {"groups": 2, "zero_score_groups": 2, "affected_turns": 2},
+      "feedback": {"groups": 3, "zero_score_groups": 3, "affected_turns": 3}
+    },
+    "tie_break": "descending unrounded priority then lexicographic memory_id; may bias equal-score selection",
+    "irrelevant_round_selection_stability": {"read_only": "3/4", "replacement": "3/4", "feedback": "4/4"},
+    "irrelevant_round_appraisal_stability": {"read_only": "3/8", "replacement": "2/8", "feedback": "2/8"},
+    "corrected_deadline_case": {
+      "correction_turn": 3,
+      "post_correction_unrelated_turn": 4,
+      "read_only_selected_old_deadline_before_correction": true,
+      "persistent_arms_wrote_old_deadline_before_correction": false,
+      "prior_card_retirement_behavior_measured": false
+    },
+    "explicit_card_write_tokens": {"replacement": 86, "feedback": 45},
+    "runtime_work": {"forward_calls": 414, "input_tokens": 57713, "appraisal_calls": 72},
+    "runtime_work_scope": "includes appraisal prompts and unscored control replay; excludes latency and peak memory",
+    "report_sha256": "487e8d8b6d974b20d1374bf6d0b6854de2453dbc6bebf7c6f1349fc9da7553cd",
+    "implementation_sha256": {
+      "probes/state_replay.py": "2a485c085c029e5fcfbd64bffc4e167d2c6958d48c4c1ac22b9dc85f3174a8c4",
+      "probes/replay_runtime.py": "9db165e77a4bcc7280633ba292601c5181af7133eb509d9792cb86f318f4d468",
+      "src/priority.py": "7799f29008b9f7ab904073448542d81923d7cba0bbd761c51f371b867e071fbf",
+      "configs/priority-policy-proposal.json": "e209cf2c43d504e41d63d2a6149c3b99f942257796309c9c1da7b86eaf81a25d"
+    },
+    "live_replay_exact": true,
+    "report": "reports/state-pilot-v2-cpu.json"
+  },
+  "long_window_pair": {
+    "fixture": "state-window-pair-v1",
+    "fixture_sha256": "4066caf116f90badde161d6c585ccf97416891b9f160e2f4b73481e2e841dd11",
+    "cases": 2,
+    "rounds": 14,
+    "labeled_checkpoints": 6,
+    "curator_hypothesis_hits": {"read_only": "0/6", "replacement": "0/6", "feedback": "0/6"},
+    "pending_candidate_ratings": {"read_only": 10, "replacement": 10, "feedback": 10},
+    "selected_cards": {"read_only": 0, "replacement": 0, "feedback": 0},
+    "card_order_changes_between_turns": {"read_only": 0, "replacement": 0, "feedback": 0},
+    "score_tie_groups": {"read_only": {"groups": 0, "zero_score_groups": 0, "affected_turns": 0}, "replacement": {"groups": 0, "zero_score_groups": 0, "affected_turns": 0}, "feedback": {"groups": 0, "zero_score_groups": 0, "affected_turns": 0}},
+    "tie_break": "descending unrounded priority then lexicographic memory_id",
+    "explicit_card_write_tokens": {"replacement": 0, "feedback": 0},
+    "runtime_work": {"forward_calls": 276, "input_tokens": 24462, "appraisal_calls": 30},
+    "runtime_work_scope": "includes appraisal prompts and unscored control replay; excludes latency and peak memory",
+    "report_sha256": "d049a2052713f1a77b27fc1e3dd3bf14287244869cc71404b0369fa1f32bff72",
+    "implementation_sha256": {
+      "probes/state_replay.py": "2a485c085c029e5fcfbd64bffc4e167d2c6958d48c4c1ac22b9dc85f3174a8c4",
+      "probes/replay_runtime.py": "9db165e77a4bcc7280633ba292601c5181af7133eb509d9792cb86f318f4d468",
+      "src/priority.py": "7799f29008b9f7ab904073448542d81923d7cba0bbd761c51f371b867e071fbf",
+      "configs/priority-policy-proposal.json": "e209cf2c43d504e41d63d2a6149c3b99f942257796309c9c1da7b86eaf81a25d"
+    },
+    "sixth_turn_checklist_repetition_grade": {
+      "standing_context": {"read_only": 4, "replacement": 1, "feedback": 4},
+      "fictional_context": {"read_only": 1, "replacement": 1, "feedback": 1}
+    },
+    "live_replay_exact": true,
+    "report": "reports/state-window-pair-v1-cpu.json"
+  },
+  "limits": [
+    "Synthetic dialogue only; curator labels are not human preference ratings.",
+    "Replay scores fixture-supplied candidate cards only; extraction, attribution, deduplication, versioning, and evidence generation are not evaluated.",
+    "Replay generates no assistant replies and performs no archive retrieval.",
+    "State strategies differ in history window, card placement, and number of forwarded tokens; outcomes cannot be attributed to a tensor operation alone.",
+    "RWKV label probabilities and confidence are not calibrated probabilities of human agreement.",
+    "Equal unrounded priority scores are broken by lexicographic memory ID; this can bias selection and is reported explicitly.",
+    "Explicit card-write tokens are only one component of inference cost; wall-clock latency and peak memory were not measured.",
+    "The expiry fixture removes old versions by supplied ID. The old deadline was selected only by the read-only arm before correction; neither persistent arm wrote it, so retirement of a previously carried card was not tested.",
+    "A working-memory card is not a full transcript archive; low retention must not be described as transcript deletion."
+  ],
+  "verification": {
+    "unit_tests": "38/38 passed",
+    "human_blind_pilot": "not run",
+    "generated_reply_comparison": "not run",
+    "question_answer_accuracy": "not run",
+    "remote_push": "not performed"
+  }
+}

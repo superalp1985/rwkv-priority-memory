@@ -1,0 +1,8136 @@
+{
+  "scope": "synthetic calibration; labels, admission and context supplied by fixture",
+  "budget": 34,
+  "fixture": {
+    "version": "capacity-calibration-v1",
+    "sha256": "ccd68fe86796b41e9c0a50d7369527ba0699b3e5c588b3e158d7cda021d68791",
+    "labels": "curated synthetic retention hypotheses; not independent human ratings"
+  },
+  "runtime": {
+    "checkpoint_sha256": "e10d7b1930c2644c5c6b194444774d6d82ec8212a78763493149de09aac7d83f",
+    "source_sha256": {
+      "chatrwkv_x070_model.py": "75482aee89a08d2a8c8dbe628110b317fc8d0974ddffbaa52aa19190667305e0",
+      "rwkv_tokenizer.py": "963ed277d1f0d3a110ccb9ccabed529595ca409011ff676c8f0d58a4b004dedd",
+      "rwkv_vocab_v20230424.txt": "e6dee3d4e31b4d5c40ac99508ac6c701ceef4bed681bf2167ce9a908552bca89"
+    },
+    "appraisal_version": "four-dimension-model-appraisal-v3-contextual",
+    "label_order": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "X"
+    ],
+    "strategy": "cpu fp32",
+    "threads": 4,
+    "torch": "2.15.0+cpu",
+    "layers": 12
+  },
+  "dimensions": [
+    "importance",
+    "emotion_intensity",
+    "repetition",
+    "recency"
+  ],
+  "implementation_sha256": {
+    "src/retention.py": "99c867d082f67631ff5e35ca2d3fa6298216cbef7e2291cf0546d064f8fac3bc",
+    "probes/capacity_calibration.py": "86a2574ddec0e7efbf5a50e75ae8a6d0111605c7f74c7d57fa34137276f0265a",
+    "probes/replay_runtime.py": "9db165e77a4bcc7280633ba292601c5181af7133eb509d9792cb86f318f4d468"
+  },
+  "grid_size": 85,
+  "equal_weights": [
+    25,
+    25,
+    25,
+    25
+  ],
+  "primary_readout": "ordinal_mean",
+  "fits": {
+    "ordinal_mean": {
+      "global_fit": {
+        "weights": [
+          20,
+          30,
+          30,
+          20
+        ],
+        "best_points2": 20,
+        "best_weight_count": 30,
+        "equal_points2": 18,
+        "grid_results": [
+          {
+            "weights": [
+              10,
+              10,
+              10,
+              70
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              10,
+              20,
+              60
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              10,
+              30,
+              50
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              10,
+              40,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              10,
+              50,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              10,
+              60,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              10,
+              10,
+              70,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              20,
+              10,
+              60
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              20,
+              20,
+              50
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              20,
+              30,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              20,
+              40,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              20,
+              50,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              10,
+              20,
+              60,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              30,
+              10,
+              50
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              30,
+              20,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              30,
+              30,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              30,
+              40,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              10,
+              30,
+              50,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              40,
+              10,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              40,
+              20,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              40,
+              30,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              10,
+              40,
+              40,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              50,
+              10,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              50,
+              20,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              10,
+              50,
+              30,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              60,
+              10,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              10,
+              60,
+              20,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              70,
+              10,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              10,
+              10,
+              60
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              10,
+              20,
+              50
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              10,
+              30,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              10,
+              40,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              10,
+              50,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              20,
+              10,
+              60,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              20,
+              10,
+              50
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              20,
+              20,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              20,
+              30,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              20,
+              40,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              20,
+              20,
+              50,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              30,
+              10,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              30,
+              20,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              30,
+              30,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              20,
+              30,
+              40,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              40,
+              10,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              40,
+              20,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              20,
+              40,
+              30,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              50,
+              10,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              20,
+              50,
+              20,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              60,
+              10,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              25,
+              25,
+              25,
+              25
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              10,
+              10,
+              50
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              10,
+              20,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              10,
+              30,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              10,
+              40,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              10,
+              50,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              20,
+              10,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              20,
+              20,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              20,
+              30,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              20,
+              40,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              30,
+              10,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              30,
+              20,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              30,
+              30,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              40,
+              10,
+              20
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              40,
+              20,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              30,
+              50,
+              10,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              40,
+              10,
+              10,
+              40
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              10,
+              20,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              10,
+              30,
+              20
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              10,
+              40,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              40,
+              20,
+              10,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              20,
+              20,
+              20
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              20,
+              30,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              40,
+              30,
+              10,
+              20
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              30,
+              20,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              40,
+              40,
+              10,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              50,
+              10,
+              10,
+              30
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              50,
+              10,
+              20,
+              20
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              50,
+              10,
+              30,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              50,
+              20,
+              10,
+              20
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              50,
+              20,
+              20,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              50,
+              30,
+              10,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              60,
+              10,
+              10,
+              20
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              60,
+              10,
+              20,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              60,
+              20,
+              10,
+              10
+            ],
+            "points2": 20
+          },
+          {
+            "weights": [
+              70,
+              10,
+              10,
+              10
+            ],
+            "points2": 20
+          }
+        ]
+      },
+      "by_context": {
+        "active": {
+          "weights": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "best_points2": 8,
+          "best_weight_count": 72,
+          "equal_points2": 8,
+          "grid_results": [
+            {
+              "weights": [
+                10,
+                10,
+                10,
+                70
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                20,
+                60
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                30,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                40,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                50,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                60,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                70,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                20,
+                10,
+                60
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                20,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                30,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                40,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                50,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                60,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                30,
+                10,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                20,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                30,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                40,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                50,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                40,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                40,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                40,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                40,
+                40,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                50,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                50,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                50,
+                30,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                60,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                60,
+                20,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                70,
+                10,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                10,
+                10,
+                60
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                20,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                30,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                40,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                50,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                60,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                20,
+                10,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                20,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                30,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                40,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                50,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                30,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                40,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                40,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                40,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                40,
+                30,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                50,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                50,
+                20,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                60,
+                10,
+                10
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                10,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                20,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                30,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                40,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                50,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                40,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                40,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                40,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                50,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                40,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                30,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                30,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                40,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                20,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                20,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                30,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                10,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                10,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                20,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                70,
+                10,
+                10,
+                10
+              ],
+              "points2": 8
+            }
+          ]
+        },
+        "standing": {
+          "weights": [
+            20,
+            30,
+            30,
+            20
+          ],
+          "best_points2": 12,
+          "best_weight_count": 43,
+          "equal_points2": 10,
+          "grid_results": [
+            {
+              "weights": [
+                10,
+                10,
+                10,
+                70
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                10,
+                20,
+                60
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                10,
+                30,
+                50
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                10,
+                40,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                10,
+                50,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                10,
+                60,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                10,
+                70,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                20,
+                10,
+                60
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                20,
+                20,
+                50
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                20,
+                30,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                20,
+                40,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                20,
+                50,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                20,
+                60,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                30,
+                10,
+                50
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                30,
+                20,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                30,
+                30,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                30,
+                40,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                30,
+                50,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                40,
+                10,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                40,
+                20,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                40,
+                30,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                40,
+                40,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                50,
+                10,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                50,
+                20,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                50,
+                30,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                60,
+                10,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                60,
+                20,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                10,
+                70,
+                10,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                10,
+                10,
+                60
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                10,
+                20,
+                50
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                10,
+                30,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                10,
+                40,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                10,
+                50,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                10,
+                60,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                20,
+                10,
+                50
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                20,
+                20,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                20,
+                30,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                20,
+                40,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                20,
+                50,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                30,
+                10,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                30,
+                20,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                30,
+                40,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                40,
+                10,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                40,
+                20,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                40,
+                30,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                50,
+                10,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                50,
+                20,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                20,
+                60,
+                10,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                10,
+                10,
+                50
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                10,
+                20,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                10,
+                30,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                10,
+                40,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                10,
+                50,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                20,
+                10,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                20,
+                20,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                20,
+                30,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                20,
+                40,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                30,
+                10,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                30,
+                20,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                40,
+                10,
+                20
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                40,
+                20,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                30,
+                50,
+                10,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                40,
+                10,
+                10,
+                40
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                10,
+                20,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                10,
+                30,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                10,
+                40,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                40,
+                20,
+                10,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                20,
+                20,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                20,
+                30,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                40,
+                30,
+                10,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                30,
+                20,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                40,
+                40,
+                10,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                50,
+                10,
+                10,
+                30
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                50,
+                10,
+                20,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                50,
+                10,
+                30,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                50,
+                20,
+                10,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                50,
+                20,
+                20,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                50,
+                30,
+                10,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                60,
+                10,
+                10,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                60,
+                10,
+                20,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                60,
+                20,
+                10,
+                10
+              ],
+              "points2": 12
+            },
+            {
+              "weights": [
+                70,
+                10,
+                10,
+                10
+              ],
+              "points2": 12
+            }
+          ]
+        }
+      },
+      "global_weights": [
+        20,
+        30,
+        30,
+        20
+      ],
+      "context_weights": {
+        "active": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "standing": [
+          20,
+          30,
+          30,
+          20
+        ]
+      },
+      "calibration": {
+        "equal": {
+          "n": 16,
+          "points2": 18,
+          "hits": 9,
+          "strict_hits": 9,
+          "ties": 0,
+          "deferred": 1,
+          "predictions": [
+            {
+              "id": "a01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a05",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a06",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a07",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a08",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s01",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s02",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s03",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s04",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s05",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s06",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s07",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s08",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "global_tuned": {
+          "n": 16,
+          "points2": 20,
+          "hits": 10,
+          "strict_hits": 10,
+          "ties": 0,
+          "deferred": 1,
+          "predictions": [
+            {
+              "id": "a01",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a02",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a03",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a04",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a05",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a06",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a07",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a08",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s01",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s02",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s03",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s04",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s05",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s06",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s07",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s08",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "context_tuned": {
+          "n": 16,
+          "points2": 20,
+          "hits": 10,
+          "strict_hits": 10,
+          "ties": 0,
+          "deferred": 1,
+          "predictions": [
+            {
+              "id": "a01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a05",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a06",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a07",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a08",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s01",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s02",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s03",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s04",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s05",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s06",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s07",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s08",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        }
+      }
+    },
+    "argmax": {
+      "global_fit": {
+        "weights": [
+          30,
+          30,
+          30,
+          10
+        ],
+        "best_points2": 18,
+        "best_weight_count": 16,
+        "equal_points2": 16,
+        "grid_results": [
+          {
+            "weights": [
+              10,
+              10,
+              10,
+              70
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              10,
+              20,
+              60
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              10,
+              30,
+              50
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              10,
+              40,
+              40
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              10,
+              50,
+              30
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              10,
+              60,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              10,
+              10,
+              70,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              20,
+              10,
+              60
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              20,
+              20,
+              50
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              20,
+              30,
+              40
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              20,
+              40,
+              30
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              20,
+              50,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              10,
+              20,
+              60,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              30,
+              10,
+              50
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              30,
+              20,
+              40
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              30,
+              30,
+              30
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              30,
+              40,
+              20
+            ],
+            "points2": 15
+          },
+          {
+            "weights": [
+              10,
+              30,
+              50,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              40,
+              10,
+              40
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              40,
+              20,
+              30
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              40,
+              30,
+              20
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              40,
+              40,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              50,
+              10,
+              30
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              50,
+              20,
+              20
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              50,
+              30,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              10,
+              60,
+              10,
+              20
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              10,
+              60,
+              20,
+              10
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              10,
+              70,
+              10,
+              10
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              20,
+              10,
+              10,
+              60
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              20,
+              10,
+              20,
+              50
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              20,
+              10,
+              30,
+              40
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              20,
+              10,
+              40,
+              30
+            ],
+            "points2": 15
+          },
+          {
+            "weights": [
+              20,
+              10,
+              50,
+              20
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              10,
+              60,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              20,
+              10,
+              50
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              20,
+              20,
+              20,
+              40
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              20,
+              20,
+              30,
+              30
+            ],
+            "points2": 15
+          },
+          {
+            "weights": [
+              20,
+              20,
+              40,
+              20
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              20,
+              20,
+              50,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              30,
+              10,
+              40
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              20,
+              30,
+              20,
+              30
+            ],
+            "points2": 15
+          },
+          {
+            "weights": [
+              20,
+              30,
+              30,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              20,
+              30,
+              40,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              40,
+              10,
+              30
+            ],
+            "points2": 15
+          },
+          {
+            "weights": [
+              20,
+              40,
+              20,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              20,
+              40,
+              30,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              20,
+              50,
+              10,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              20,
+              50,
+              20,
+              10
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              20,
+              60,
+              10,
+              10
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              25,
+              25,
+              25,
+              25
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              10,
+              10,
+              50
+            ],
+            "points2": 14
+          },
+          {
+            "weights": [
+              30,
+              10,
+              20,
+              40
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              10,
+              30,
+              30
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              10,
+              40,
+              20
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              30,
+              10,
+              50,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              20,
+              10,
+              40
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              20,
+              20,
+              30
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              20,
+              30,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              20,
+              40,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              30,
+              10,
+              30
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              30,
+              20,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              30,
+              30,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              30,
+              40,
+              10,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              30,
+              40,
+              20,
+              10
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              30,
+              50,
+              10,
+              10
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              40,
+              10,
+              10,
+              40
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              40,
+              10,
+              20,
+              30
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              40,
+              10,
+              30,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              40,
+              10,
+              40,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              20,
+              10,
+              30
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              40,
+              20,
+              20,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              40,
+              20,
+              30,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              40,
+              30,
+              10,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              40,
+              30,
+              20,
+              10
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              40,
+              40,
+              10,
+              10
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              50,
+              10,
+              10,
+              30
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              50,
+              10,
+              20,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              50,
+              10,
+              30,
+              10
+            ],
+            "points2": 18
+          },
+          {
+            "weights": [
+              50,
+              20,
+              10,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              50,
+              20,
+              20,
+              10
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              50,
+              30,
+              10,
+              10
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              60,
+              10,
+              10,
+              20
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              60,
+              10,
+              20,
+              10
+            ],
+            "points2": 17
+          },
+          {
+            "weights": [
+              60,
+              20,
+              10,
+              10
+            ],
+            "points2": 16
+          },
+          {
+            "weights": [
+              70,
+              10,
+              10,
+              10
+            ],
+            "points2": 15
+          }
+        ]
+      },
+      "by_context": {
+        "active": {
+          "weights": [
+            25,
+            25,
+            25,
+            25
+          ],
+          "best_points2": 8,
+          "best_weight_count": 53,
+          "equal_points2": 8,
+          "grid_results": [
+            {
+              "weights": [
+                10,
+                10,
+                10,
+                70
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                10,
+                20,
+                60
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                10,
+                30,
+                50
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                10,
+                40,
+                40
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                10,
+                50,
+                30
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                10,
+                60,
+                20
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                10,
+                70,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                10,
+                60
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                20,
+                20,
+                50
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                20,
+                30,
+                40
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                20,
+                40,
+                30
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                20,
+                50,
+                20
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                20,
+                60,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                10,
+                50
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                30,
+                20,
+                40
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                30,
+                30,
+                30
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                30,
+                40,
+                20
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                30,
+                50,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                40,
+                10,
+                40
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                40,
+                20,
+                30
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                40,
+                30,
+                20
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                40,
+                40,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                50,
+                10,
+                30
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                50,
+                20,
+                20
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                50,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                60,
+                10,
+                20
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                10,
+                60,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                70,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                10,
+                60
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                10,
+                20,
+                50
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                10,
+                30,
+                40
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                10,
+                40,
+                30
+              ],
+              "points2": 7
+            },
+            {
+              "weights": [
+                20,
+                10,
+                50,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                60,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                10,
+                50
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                20,
+                20,
+                40
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                20,
+                30,
+                30
+              ],
+              "points2": 7
+            },
+            {
+              "weights": [
+                20,
+                20,
+                40,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                50,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                10,
+                40
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                20,
+                30,
+                20,
+                30
+              ],
+              "points2": 7
+            },
+            {
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                40,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                40,
+                10,
+                30
+              ],
+              "points2": 7
+            },
+            {
+              "weights": [
+                20,
+                40,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                40,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                50,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                50,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                60,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                10,
+                50
+              ],
+              "points2": 6
+            },
+            {
+              "weights": [
+                30,
+                10,
+                20,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                30,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                40,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                50,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                40,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                40,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                40,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                50,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                40,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                30,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                30,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                40,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                30,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                20,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                20,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                30,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                10,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                10,
+                20,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                20,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                70,
+                10,
+                10,
+                10
+              ],
+              "points2": 8
+            }
+          ]
+        },
+        "standing": {
+          "weights": [
+            30,
+            30,
+            30,
+            10
+          ],
+          "best_points2": 10,
+          "best_weight_count": 18,
+          "equal_points2": 8,
+          "grid_results": [
+            {
+              "weights": [
+                10,
+                10,
+                10,
+                70
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                20,
+                60
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                30,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                40,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                50,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                10,
+                60,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                10,
+                70,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                20,
+                10,
+                60
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                20,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                30,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                40,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                20,
+                50,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                20,
+                60,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                30,
+                10,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                20,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                30,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                30,
+                40,
+                20
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                10,
+                30,
+                50,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                40,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                40,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                40,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                40,
+                40,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                50,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                50,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                50,
+                30,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                10,
+                60,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                10,
+                60,
+                20,
+                10
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                10,
+                70,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                10,
+                60
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                20,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                30,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                40,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                10,
+                50,
+                20
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                10,
+                60,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                20,
+                10,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                20,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                30,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                20,
+                40,
+                20
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                20,
+                20,
+                50,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                30,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                30,
+                40,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                40,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                40,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                40,
+                30,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                20,
+                50,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                20,
+                50,
+                20,
+                10
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                20,
+                60,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                10,
+                50
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                20,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                30,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                10,
+                40,
+                20
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                30,
+                10,
+                50,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                20,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                20,
+                40,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                30,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                30,
+                40,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                30,
+                40,
+                20,
+                10
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                30,
+                50,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                10,
+                40
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                20,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                30,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                10,
+                40,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                20,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                20,
+                30,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                40,
+                30,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                40,
+                30,
+                20,
+                10
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                40,
+                40,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                10,
+                30
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                20,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                10,
+                30,
+                10
+              ],
+              "points2": 10
+            },
+            {
+              "weights": [
+                50,
+                20,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                50,
+                20,
+                20,
+                10
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                50,
+                30,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                10,
+                10,
+                20
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                60,
+                10,
+                20,
+                10
+              ],
+              "points2": 9
+            },
+            {
+              "weights": [
+                60,
+                20,
+                10,
+                10
+              ],
+              "points2": 8
+            },
+            {
+              "weights": [
+                70,
+                10,
+                10,
+                10
+              ],
+              "points2": 7
+            }
+          ]
+        }
+      },
+      "global_weights": [
+        30,
+        30,
+        30,
+        10
+      ],
+      "context_weights": {
+        "active": [
+          25,
+          25,
+          25,
+          25
+        ],
+        "standing": [
+          30,
+          30,
+          30,
+          10
+        ]
+      },
+      "calibration": {
+        "equal": {
+          "n": 16,
+          "points2": 16,
+          "hits": 8,
+          "strict_hits": 6,
+          "ties": 4,
+          "deferred": 1,
+          "predictions": [
+            {
+              "id": "a01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "a04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a05",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a06",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a07",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "a08",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s01",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s02",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s03",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s04",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 1
+            },
+            {
+              "id": "s05",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s06",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 1
+            },
+            {
+              "id": "s07",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s08",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "global_tuned": {
+          "n": 16,
+          "points2": 18,
+          "hits": 9,
+          "strict_hits": 7,
+          "ties": 4,
+          "deferred": 1,
+          "predictions": [
+            {
+              "id": "a01",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a02",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a03",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "a04",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a05",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a06",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a07",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "a08",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s01",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s02",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s03",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s04",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 1
+            },
+            {
+              "id": "s05",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s06",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 1
+            },
+            {
+              "id": "s07",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s08",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "context_tuned": {
+          "n": 16,
+          "points2": 18,
+          "hits": 9,
+          "strict_hits": 7,
+          "ties": 4,
+          "deferred": 1,
+          "predictions": [
+            {
+              "id": "a01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "a04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "a05",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a06",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "a07",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "a08",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s01",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s02",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s03",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s04",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 1
+            },
+            {
+              "id": "s05",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "s06",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 1
+            },
+            {
+              "id": "s07",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "s08",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "work": {
+    "forward_calls": 700,
+    "input_tokens": 32987,
+    "appraisal_calls": 32,
+    "wall_seconds": 145.22
+  },
+  "cases": [
+    {
+      "id": "a01",
+      "context": "active",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 14,
+        "second": 14,
+        "incoming": 12
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.20292454957962036,
+              0.17902299761772156,
+              0.10399173200130463,
+              0.2025492638349533,
+              0.17915424704551697,
+              0.13235723972320557
+            ],
+            "emotion_intensity": [
+              0.22603514790534973,
+              0.18073803186416626,
+              0.13345018029212952,
+              0.20585592091083527,
+              0.16309364140033722,
+              0.09082707017660141
+            ],
+            "repetition": [
+              0.16153573989868164,
+              0.2262476086616516,
+              0.14844860136508942,
+              0.2154303938150406,
+              0.18678659200668335,
+              0.061551112681627274
+            ],
+            "recency": [
+              0.14746831357479095,
+              0.20368342101573944,
+              0.1621597707271576,
+              0.2434539794921875,
+              0.16062302887439728,
+              0.0826115533709526
+            ]
+          },
+          "confidence": 0.2246653214097023,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 3,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.18808460235595703,
+              0.21548685431480408,
+              0.09681952744722366,
+              0.2185070514678955,
+              0.17641796171665192,
+              0.10468397289514542
+            ],
+            "emotion_intensity": [
+              0.22031377255916595,
+              0.2127930223941803,
+              0.11419129371643066,
+              0.20860350131988525,
+              0.16090324521064758,
+              0.08319514244794846
+            ],
+            "repetition": [
+              0.15369091928005219,
+              0.24858775734901428,
+              0.13967111706733704,
+              0.2151482105255127,
+              0.1828298419713974,
+              0.06007204204797745
+            ],
+            "recency": [
+              0.15883103013038635,
+              0.24150431156158447,
+              0.1301930546760559,
+              0.22851119935512543,
+              0.1649743616580963,
+              0.07598607242107391
+            ]
+          },
+          "confidence": 0.23222822323441505,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "a02",
+      "context": "active",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 15,
+        "second": 14,
+        "incoming": 13
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.24139384925365448,
+              0.18586613237857819,
+              0.10492485016584396,
+              0.1632167398929596,
+              0.15838296711444855,
+              0.1462155431509018
+            ],
+            "emotion_intensity": [
+              0.2886713147163391,
+              0.19111759960651398,
+              0.1215064749121666,
+              0.16498346626758575,
+              0.13804861903190613,
+              0.09567255526781082
+            ],
+            "repetition": [
+              0.15499494969844818,
+              0.21957358717918396,
+              0.15422195196151733,
+              0.20998966693878174,
+              0.19254259765148163,
+              0.06867725402116776
+            ],
+            "recency": [
+              0.2042255848646164,
+              0.20769822597503662,
+              0.14331403374671936,
+              0.17166770994663239,
+              0.14841802418231964,
+              0.12467646598815918
+            ]
+          },
+          "confidence": 0.23933424428105354,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.2340521514415741,
+              0.158782497048378,
+              0.09306809306144714,
+              0.17079220712184906,
+              0.16488219797611237,
+              0.17842286825180054
+            ],
+            "emotion_intensity": [
+              0.274701863527298,
+              0.1676827222108841,
+              0.11659279465675354,
+              0.1763659566640854,
+              0.14748482406139374,
+              0.1171717569231987
+            ],
+            "repetition": [
+              0.15580157935619354,
+              0.18871469795703888,
+              0.14578121900558472,
+              0.21790096163749695,
+              0.2080485075712204,
+              0.08375304192304611
+            ],
+            "recency": [
+              0.1791556030511856,
+              0.18448254466056824,
+              0.1452551931142807,
+              0.1918851137161255,
+              0.15533973276615143,
+              0.14388185739517212
+            ]
+          },
+          "confidence": 0.22963502258062363,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "a03",
+      "context": "active",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 14,
+        "second": 14,
+        "incoming": 12
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.2104855328798294,
+              0.20776890218257904,
+              0.12617622315883636,
+              0.20017676055431366,
+              0.12242063134908676,
+              0.1329718977212906
+            ],
+            "emotion_intensity": [
+              0.23741097748279572,
+              0.1906101256608963,
+              0.15852345526218414,
+              0.20266121625900269,
+              0.12051605433225632,
+              0.090278260409832
+            ],
+            "repetition": [
+              0.17050020396709442,
+              0.2181260585784912,
+              0.17176924645900726,
+              0.203346386551857,
+              0.15048781037330627,
+              0.08577032387256622
+            ],
+            "recency": [
+              0.15263918042182922,
+              0.20611608028411865,
+              0.19673782587051392,
+              0.2178068310022354,
+              0.10131532698869705,
+              0.12538468837738037
+            ]
+          },
+          "confidence": 0.22095734998583794,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.21599645912647247,
+              0.2143304944038391,
+              0.100279800593853,
+              0.20793254673480988,
+              0.14751200377941132,
+              0.11394872516393661
+            ],
+            "emotion_intensity": [
+              0.2615673840045929,
+              0.20138563215732574,
+              0.11961530894041061,
+              0.20422250032424927,
+              0.1353776454925537,
+              0.07783158868551254
+            ],
+            "repetition": [
+              0.18941721320152283,
+              0.2273603230714798,
+              0.1425657570362091,
+              0.21000848710536957,
+              0.1575070470571518,
+              0.07314129918813705
+            ],
+            "recency": [
+              0.16126297414302826,
+              0.21911633014678955,
+              0.15172672271728516,
+              0.22286754846572876,
+              0.14556029438972473,
+              0.09946616739034653
+            ]
+          },
+          "confidence": 0.23194792866706848,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "a04",
+      "context": "active",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 14,
+        "second": 15,
+        "incoming": 13
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 0,
+          "label_probabilities": {
+            "importance": [
+              0.2505960762500763,
+              0.185176283121109,
+              0.10723387449979782,
+              0.18132884800434113,
+              0.12883244454860687,
+              0.14683237671852112
+            ],
+            "emotion_intensity": [
+              0.2861669361591339,
+              0.17830373346805573,
+              0.13110095262527466,
+              0.170903742313385,
+              0.11720719933509827,
+              0.11631739139556885
+            ],
+            "repetition": [
+              0.21108806133270264,
+              0.22248688340187073,
+              0.14549610018730164,
+              0.19387032091617584,
+              0.14848855137825012,
+              0.078570157289505
+            ],
+            "recency": [
+              0.21279603242874146,
+              0.2093617171049118,
+              0.1515904814004898,
+              0.19688431918621063,
+              0.12114385515451431,
+              0.108223557472229
+            ]
+          },
+          "confidence": 0.2430114820599556,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.23771733045578003,
+              0.1641007661819458,
+              0.08856165409088135,
+              0.18980750441551208,
+              0.13589921593666077,
+              0.18391352891921997
+            ],
+            "emotion_intensity": [
+              0.29597529768943787,
+              0.16681653261184692,
+              0.11228717863559723,
+              0.16405519843101501,
+              0.11620771884918213,
+              0.14465811848640442
+            ],
+            "repetition": [
+              0.20161756873130798,
+              0.2077411413192749,
+              0.12865260243415833,
+              0.20293840765953064,
+              0.15530063211917877,
+              0.10374964028596878
+            ],
+            "recency": [
+              0.19594347476959229,
+              0.1845848262310028,
+              0.1386822760105133,
+              0.21092434227466583,
+              0.13290207087993622,
+              0.1369629055261612
+            ]
+          },
+          "confidence": 0.23808952793478966,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "a05",
+      "context": "active",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 14,
+        "second": 15,
+        "incoming": 13
+      },
+      "ratings": {
+        "first": {
+          "importance": 1,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.20786823332309723,
+              0.2420525699853897,
+              0.09911628812551498,
+              0.1971438229084015,
+              0.1363207846879959,
+              0.11749826371669769
+            ],
+            "emotion_intensity": [
+              0.22903846204280853,
+              0.22040008008480072,
+              0.12343744188547134,
+              0.19803600013256073,
+              0.13420774042606354,
+              0.09488030523061752
+            ],
+            "repetition": [
+              0.16522927582263947,
+              0.24631595611572266,
+              0.1462281197309494,
+              0.20888805389404297,
+              0.15441663563251495,
+              0.07892195135354996
+            ],
+            "recency": [
+              0.16369836032390594,
+              0.24091513454914093,
+              0.14567765593528748,
+              0.20356789231300354,
+              0.13396549224853516,
+              0.11217545717954636
+            ]
+          },
+          "confidence": 0.23958053067326546,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 3,
+          "emotion_intensity": 3,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.1981329470872879,
+              0.1987932026386261,
+              0.11864927411079407,
+              0.2435539811849594,
+              0.13942725956439972,
+              0.1014433354139328
+            ],
+            "emotion_intensity": [
+              0.21605847775936127,
+              0.1792740374803543,
+              0.14257344603538513,
+              0.24114882946014404,
+              0.13977718353271484,
+              0.08116811513900757
+            ],
+            "repetition": [
+              0.15121018886566162,
+              0.20078685879707336,
+              0.1605762541294098,
+              0.2571709454059601,
+              0.16060838103294373,
+              0.06964728981256485
+            ],
+            "recency": [
+              0.1648811399936676,
+              0.19542987644672394,
+              0.16819247603416443,
+              0.2580986022949219,
+              0.1208149865269661,
+              0.09258293360471725
+            ]
+          },
+          "confidence": 0.24999308958649635,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "a06",
+      "context": "active",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 16,
+        "second": 15,
+        "incoming": 13
+      },
+      "ratings": {
+        "first": {
+          "importance": 3,
+          "emotion_intensity": 3,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.1852051168680191,
+              0.22820910811424255,
+              0.10285879671573639,
+              0.23208430409431458,
+              0.17167212069034576,
+              0.0799705982208252
+            ],
+            "emotion_intensity": [
+              0.19906802475452423,
+              0.21703416109085083,
+              0.13036109507083893,
+              0.23386803269386292,
+              0.16554667055606842,
+              0.05412202328443527
+            ],
+            "repetition": [
+              0.1285228729248047,
+              0.2384340763092041,
+              0.14284230768680573,
+              0.2480166256427765,
+              0.2052232176065445,
+              0.03696093335747719
+            ],
+            "recency": [
+              0.14333610236644745,
+              0.23688969016075134,
+              0.1383701115846634,
+              0.2520100474357605,
+              0.17473231256008148,
+              0.05466165766119957
+            ]
+          },
+          "confidence": 0.24149475246667862,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.22344566881656647,
+              0.20080126821994781,
+              0.07757426053285599,
+              0.1892700493335724,
+              0.15292130410671234,
+              0.1559874266386032
+            ],
+            "emotion_intensity": [
+              0.25342321395874023,
+              0.1964089721441269,
+              0.1030985414981842,
+              0.19933784008026123,
+              0.146368145942688,
+              0.10136336088180542
+            ],
+            "repetition": [
+              0.16285066306591034,
+              0.22698651254177094,
+              0.12453347444534302,
+              0.22320789098739624,
+              0.1923394352197647,
+              0.07008198648691177
+            ],
+            "recency": [
+              0.1597546935081482,
+              0.20177127420902252,
+              0.11585146933794022,
+              0.2315075695514679,
+              0.1691264659166336,
+              0.12198852747678757
+            ]
+          },
+          "confidence": 0.23384074121713638,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "a07",
+      "context": "active",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 15,
+        "second": 14,
+        "incoming": 14
+      },
+      "ratings": {
+        "first": {
+          "importance": 1,
+          "emotion_intensity": 1,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.19374990463256836,
+              0.2393026500940323,
+              0.09797756373882294,
+              0.16741392016410828,
+              0.16481707990169525,
+              0.13673891127109528
+            ],
+            "emotion_intensity": [
+              0.23592662811279297,
+              0.2507087290287018,
+              0.1222439557313919,
+              0.17180071771144867,
+              0.1425686627626419,
+              0.07675127685070038
+            ],
+            "repetition": [
+              0.14288468658924103,
+              0.2751539945602417,
+              0.1418815553188324,
+              0.19454316794872284,
+              0.1804381012916565,
+              0.06509851664304733
+            ],
+            "recency": [
+              0.15822064876556396,
+              0.2632843255996704,
+              0.1419541835784912,
+              0.19214121997356415,
+              0.1450301855802536,
+              0.09936945140361786
+            ]
+          },
+          "confidence": 0.25711242482066154,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 1,
+          "emotion_intensity": 1,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.17656210064888,
+              0.24468247592449188,
+              0.093941330909729,
+              0.196874737739563,
+              0.15668611228466034,
+              0.1312532126903534
+            ],
+            "emotion_intensity": [
+              0.22463592886924744,
+              0.23724743723869324,
+              0.11314357072114944,
+              0.19347365200519562,
+              0.1372172087430954,
+              0.09428219497203827
+            ],
+            "repetition": [
+              0.13335810601711273,
+              0.26995354890823364,
+              0.13259679079055786,
+              0.2173415720462799,
+              0.18344007432460785,
+              0.06330997496843338
+            ],
+            "recency": [
+              0.15905462205410004,
+              0.273122638463974,
+              0.12507665157318115,
+              0.20745939016342163,
+              0.13363152742385864,
+              0.10165511071681976
+            ]
+          },
+          "confidence": 0.2562515251338482,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "a08",
+      "context": "active",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 15,
+        "second": 15,
+        "incoming": 13
+      },
+      "ratings": {
+        "first": {
+          "importance": 1,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.19131290912628174,
+              0.21241071820259094,
+              0.11608128249645233,
+              0.2010437250137329,
+              0.13102690875530243,
+              0.14812453091144562
+            ],
+            "emotion_intensity": [
+              0.2216210663318634,
+              0.20078279078006744,
+              0.1454329788684845,
+              0.2079877406358719,
+              0.12146145850419998,
+              0.10271407663822174
+            ],
+            "repetition": [
+              0.15598717331886292,
+              0.2264067679643631,
+              0.15879632532596588,
+              0.21352741122245789,
+              0.16279180347919464,
+              0.08249051123857498
+            ],
+            "recency": [
+              0.15608848631381989,
+              0.21593572199344635,
+              0.1799611896276474,
+              0.22376815974712372,
+              0.11785472184419632,
+              0.10639171302318573
+            ]
+          },
+          "confidence": 0.2210516780614853,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 3,
+          "emotion_intensity": 0,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.19140632450580597,
+              0.18605385720729828,
+              0.1043805405497551,
+              0.2220466434955597,
+              0.14491218328475952,
+              0.15120042860507965
+            ],
+            "emotion_intensity": [
+              0.23860770463943481,
+              0.18498612940311432,
+              0.131630077958107,
+              0.2238079309463501,
+              0.12712067365646362,
+              0.09384746849536896
+            ],
+            "repetition": [
+              0.1570015698671341,
+              0.20058676600456238,
+              0.14754395186901093,
+              0.24127984046936035,
+              0.17451271414756775,
+              0.07907525449991226
+            ],
+            "recency": [
+              0.14416822791099548,
+              0.19142493605613708,
+              0.17225559055805206,
+              0.2607165575027466,
+              0.1285773068666458,
+              0.10285750031471252
+            ]
+          },
+          "confidence": 0.24066268652677536,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s01",
+      "context": "standing",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 15,
+        "second": 15,
+        "incoming": 14
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.20728160440921783,
+              0.18941417336463928,
+              0.09867504984140396,
+              0.18079827725887299,
+              0.16297711431980133,
+              0.1608537882566452
+            ],
+            "emotion_intensity": [
+              0.2626537084579468,
+              0.18709444999694824,
+              0.11836060881614685,
+              0.17666180431842804,
+              0.14244809746742249,
+              0.11278145015239716
+            ],
+            "repetition": [
+              0.17493575811386108,
+              0.21971426904201508,
+              0.146779865026474,
+              0.20124222338199615,
+              0.1803000122308731,
+              0.07702794671058655
+            ],
+            "recency": [
+              0.1556796133518219,
+              0.2038518190383911,
+              0.14996354281902313,
+              0.20458927750587463,
+              0.15181955695152283,
+              0.1340961754322052
+            ]
+          },
+          "confidence": 0.22355971485376358,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 3,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.19280242919921875,
+              0.19266614317893982,
+              0.09903048723936081,
+              0.19668379426002502,
+              0.16771811246871948,
+              0.1510990411043167
+            ],
+            "emotion_intensity": [
+              0.2514714002609253,
+              0.18846844136714935,
+              0.11901891231536865,
+              0.18700237572193146,
+              0.15105503797531128,
+              0.10298381745815277
+            ],
+            "repetition": [
+              0.15566450357437134,
+              0.2184494137763977,
+              0.14241211116313934,
+              0.21604621410369873,
+              0.19499775767326355,
+              0.07242990285158157
+            ],
+            "recency": [
+              0.15973719954490662,
+              0.19831424951553345,
+              0.1427905410528183,
+              0.20482739806175232,
+              0.16808077692985535,
+              0.12624984979629517
+            ]
+          },
+          "confidence": 0.21785800158977509,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s02",
+      "context": "standing",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 16,
+        "second": 14,
+        "incoming": 15
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.25676429271698,
+              0.18012095987796783,
+              0.10660729557275772,
+              0.19617129862308502,
+              0.14770890772342682,
+              0.11262717843055725
+            ],
+            "emotion_intensity": [
+              0.2590959072113037,
+              0.17760607600212097,
+              0.11772038787603378,
+              0.1963079869747162,
+              0.1483483910560608,
+              0.10092122852802277
+            ],
+            "repetition": [
+              0.1888001561164856,
+              0.2047940045595169,
+              0.1469794660806656,
+              0.20916666090488434,
+              0.17787542939186096,
+              0.07238426059484482
+            ],
+            "recency": [
+              0.1918317824602127,
+              0.20484186708927155,
+              0.14845073223114014,
+              0.20836979150772095,
+              0.1357116401195526,
+              0.11079409718513489
+            ]
+          },
+          "confidence": 0.23334916308522224,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 0,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.3024061322212219,
+              0.1905587911605835,
+              0.09044873714447021,
+              0.14487412571907043,
+              0.1491994857788086,
+              0.12251269072294235
+            ],
+            "emotion_intensity": [
+              0.3089267909526825,
+              0.18557168543338776,
+              0.108457051217556,
+              0.15145622193813324,
+              0.14321410655975342,
+              0.1023741364479065
+            ],
+            "repetition": [
+              0.23377220332622528,
+              0.21296551823616028,
+              0.13420423865318298,
+              0.16831806302070618,
+              0.17919766902923584,
+              0.07154235988855362
+            ],
+            "recency": [
+              0.22145436704158783,
+              0.22938096523284912,
+              0.13803330063819885,
+              0.15674543380737305,
+              0.14473430812358856,
+              0.1096515953540802
+            ]
+          },
+          "confidence": 0.2686215229332447,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s03",
+      "context": "standing",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 15,
+        "second": 14,
+        "incoming": 15
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 0,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.27467986941337585,
+              0.17643922567367554,
+              0.08539946377277374,
+              0.16490808129310608,
+              0.13296572864055634,
+              0.16560766100883484
+            ],
+            "emotion_intensity": [
+              0.30789119005203247,
+              0.1794852763414383,
+              0.10397127270698547,
+              0.16739171743392944,
+              0.11575350910425186,
+              0.12550708651542664
+            ],
+            "repetition": [
+              0.2135525494813919,
+              0.19969552755355835,
+              0.13145726919174194,
+              0.18997488915920258,
+              0.1654234379529953,
+              0.09989634156227112
+            ],
+            "recency": [
+              0.18426062166690826,
+              0.19639362394809723,
+              0.1405763030052185,
+              0.20587755739688873,
+              0.1150132343173027,
+              0.15787868201732635
+            ]
+          },
+          "confidence": 0.25050029158592224,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.2642822861671448,
+              0.19505073130130768,
+              0.09250173717737198,
+              0.16021758317947388,
+              0.16443859040737152,
+              0.12350919842720032
+            ],
+            "emotion_intensity": [
+              0.29206520318984985,
+              0.19711290299892426,
+              0.10690083354711533,
+              0.15685908496379852,
+              0.14157657325267792,
+              0.10548540204763412
+            ],
+            "repetition": [
+              0.19160518050193787,
+              0.21898145973682404,
+              0.1339125782251358,
+              0.1890624463558197,
+              0.1966579556465149,
+              0.06978040188550949
+            ],
+            "recency": [
+              0.19706514477729797,
+              0.22364357113838196,
+              0.13913825154304504,
+              0.17301014065742493,
+              0.1542666107416153,
+              0.112876296043396
+            ]
+          },
+          "confidence": 0.24974313005805016,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s04",
+      "context": "standing",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 16,
+        "second": 17,
+        "incoming": 15
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.24856245517730713,
+              0.2247498631477356,
+              0.08799589425325394,
+              0.16896089911460876,
+              0.1487577110528946,
+              0.1209731325507164
+            ],
+            "emotion_intensity": [
+              0.2603471279144287,
+              0.20465421676635742,
+              0.1174430325627327,
+              0.1796075701713562,
+              0.14165562391281128,
+              0.0962924212217331
+            ],
+            "repetition": [
+              0.18561068177223206,
+              0.24015100300312042,
+              0.13730734586715698,
+              0.19609546661376953,
+              0.17550167441368103,
+              0.06533383578062057
+            ],
+            "recency": [
+              0.19849051535129547,
+              0.22953610122203827,
+              0.12432887405157089,
+              0.18204380571842194,
+              0.14432308077812195,
+              0.12127756327390671
+            ]
+          },
+          "confidence": 0.24464917182922363,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.23048032820224762,
+              0.2144133299589157,
+              0.07370803505182266,
+              0.15907572209835052,
+              0.1364491730928421,
+              0.1858733892440796
+            ],
+            "emotion_intensity": [
+              0.25999343395233154,
+              0.19939711689949036,
+              0.09797705709934235,
+              0.17092260718345642,
+              0.1332961916923523,
+              0.13841357827186584
+            ],
+            "repetition": [
+              0.1938486397266388,
+              0.23061934113502502,
+              0.12056513130664825,
+              0.19027265906333923,
+              0.1675601601600647,
+              0.0971340537071228
+            ],
+            "recency": [
+              0.16420716047286987,
+              0.22338788211345673,
+              0.11245203763246536,
+              0.19177818298339844,
+              0.14328722655773163,
+              0.16488751769065857
+            ]
+          },
+          "confidence": 0.23612024635076523,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s05",
+      "context": "standing",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 14,
+        "second": 15,
+        "incoming": 14
+      },
+      "ratings": {
+        "first": {
+          "importance": 1,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.2273125797510147,
+              0.24321246147155762,
+              0.08557935804128647,
+              0.16128531098365784,
+              0.15607301890850067,
+              0.12653720378875732
+            ],
+            "emotion_intensity": [
+              0.24592004716396332,
+              0.2035617083311081,
+              0.11210114508867264,
+              0.18375548720359802,
+              0.15369577705860138,
+              0.10096582025289536
+            ],
+            "repetition": [
+              0.18364785611629486,
+              0.24250425398349762,
+              0.12922623753547668,
+              0.1896405667066574,
+              0.1823560744524002,
+              0.07262500375509262
+            ],
+            "recency": [
+              0.17889727652072906,
+              0.2523214519023895,
+              0.13058993220329285,
+              0.175223246216774,
+              0.1578773558139801,
+              0.10509075969457626
+            ]
+          },
+          "confidence": 0.24598955363035202,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 3,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.2210228443145752,
+              0.21159778535366058,
+              0.07665582746267319,
+              0.20251807570457458,
+              0.13599102199077606,
+              0.1522144377231598
+            ],
+            "emotion_intensity": [
+              0.2206350564956665,
+              0.1877489984035492,
+              0.10686314851045609,
+              0.22672632336616516,
+              0.14546535909175873,
+              0.11256115138530731
+            ],
+            "repetition": [
+              0.1635025143623352,
+              0.216406911611557,
+              0.12248733639717102,
+              0.22799460589885712,
+              0.18852409720420837,
+              0.08108451962471008
+            ],
+            "recency": [
+              0.1708327680826187,
+              0.205819234251976,
+              0.11982414871454239,
+              0.23962505161762238,
+              0.13523708283901215,
+              0.12866170704364777
+            ]
+          },
+          "confidence": 0.22884220629930496,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s06",
+      "context": "standing",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 16,
+        "second": 15,
+        "incoming": 14
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.2159990817308426,
+              0.17348964512348175,
+              0.12652380764484406,
+              0.19151337444782257,
+              0.14869047701358795,
+              0.1437835991382599
+            ],
+            "emotion_intensity": [
+              0.2477247714996338,
+              0.16711148619651794,
+              0.15284980833530426,
+              0.1877545863389969,
+              0.13669848442077637,
+              0.10786078870296478
+            ],
+            "repetition": [
+              0.15057241916656494,
+              0.19704413414001465,
+              0.17639897763729095,
+              0.21279467642307281,
+              0.184256911277771,
+              0.07893291115760803
+            ],
+            "recency": [
+              0.17729869484901428,
+              0.18326446413993835,
+              0.18810151517391205,
+              0.188436821103096,
+              0.14561665058135986,
+              0.11728183925151825
+            ]
+          },
+          "confidence": 0.2162388376891613,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.26264941692352295,
+              0.176372230052948,
+              0.07479934394359589,
+              0.17208188772201538,
+              0.1327609419822693,
+              0.1813361495733261
+            ],
+            "emotion_intensity": [
+              0.3087676167488098,
+              0.17881964147090912,
+              0.09576369822025299,
+              0.17562739551067352,
+              0.11718211323022842,
+              0.12383946776390076
+            ],
+            "repetition": [
+              0.19286921620368958,
+              0.1977437287569046,
+              0.12521050870418549,
+              0.20934657752513885,
+              0.17227554321289062,
+              0.10255441814661026
+            ],
+            "recency": [
+              0.18831388652324677,
+              0.19077777862548828,
+              0.11398956924676895,
+              0.1965552419424057,
+              0.1371348649263382,
+              0.17322862148284912
+            ]
+          },
+          "confidence": 0.24432971328496933,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s07",
+      "context": "standing",
+      "expected_victim": "first",
+      "lengths": {
+        "first": 14,
+        "second": 13,
+        "incoming": 14
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 0,
+          "recency": null,
+          "label_probabilities": {
+            "importance": [
+              0.23970796167850494,
+              0.18270190060138702,
+              0.07783610373735428,
+              0.14297661185264587,
+              0.15371038019657135,
+              0.20306707918643951
+            ],
+            "emotion_intensity": [
+              0.28254058957099915,
+              0.19381597638130188,
+              0.09826779365539551,
+              0.14874877035617828,
+              0.13647638261318207,
+              0.1401505321264267
+            ],
+            "repetition": [
+              0.21589486300945282,
+              0.20480456948280334,
+              0.12081548571586609,
+              0.1677882820367813,
+              0.17546463012695312,
+              0.11523213237524033
+            ],
+            "recency": [
+              0.165076345205307,
+              0.18695150315761566,
+              0.12491842359304428,
+              0.1669422686100006,
+              0.13422998785972595,
+              0.22188149392604828
+            ]
+          },
+          "confidence": 0.2400062270462513,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 0,
+          "recency": 0,
+          "label_probabilities": {
+            "importance": [
+              0.26396822929382324,
+              0.18777617812156677,
+              0.10184153914451599,
+              0.1549435704946518,
+              0.1368694007396698,
+              0.15460120141506195
+            ],
+            "emotion_intensity": [
+              0.2795970141887665,
+              0.18001389503479004,
+              0.12090611457824707,
+              0.15690134465694427,
+              0.13349135220050812,
+              0.1290902942419052
+            ],
+            "repetition": [
+              0.2065102458000183,
+              0.19194886088371277,
+              0.1464264839887619,
+              0.1871509701013565,
+              0.17460766434669495,
+              0.09335572272539139
+            ],
+            "recency": [
+              0.19955265522003174,
+              0.18080750107765198,
+              0.16185955703258514,
+              0.17191074788570404,
+              0.1254667341709137,
+              0.16040287911891937
+            ]
+          },
+          "confidence": 0.23740703612565994,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    },
+    {
+      "id": "s08",
+      "context": "standing",
+      "expected_victim": "second",
+      "lengths": {
+        "first": 14,
+        "second": 15,
+        "incoming": 15
+      },
+      "ratings": {
+        "first": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 1,
+          "recency": 1,
+          "label_probabilities": {
+            "importance": [
+              0.270862340927124,
+              0.2278309017419815,
+              0.09740743786096573,
+              0.15926611423492432,
+              0.12979213893413544,
+              0.1148410364985466
+            ],
+            "emotion_intensity": [
+              0.30912071466445923,
+              0.20958055555820465,
+              0.11883781850337982,
+              0.1599159836769104,
+              0.11748664081096649,
+              0.08505829423666
+            ],
+            "repetition": [
+              0.190887913107872,
+              0.24238860607147217,
+              0.14979541301727295,
+              0.1906728595495224,
+              0.1656850129365921,
+              0.060570258647203445
+            ],
+            "recency": [
+              0.21092262864112854,
+              0.22755607962608337,
+              0.14469283819198608,
+              0.17390276491641998,
+              0.1262676864862442,
+              0.11665807664394379
+            ]
+          },
+          "confidence": 0.2624819353222847,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        },
+        "second": {
+          "importance": 0,
+          "emotion_intensity": 0,
+          "repetition": 3,
+          "recency": 3,
+          "label_probabilities": {
+            "importance": [
+              0.250045508146286,
+              0.1813550740480423,
+              0.11316446959972382,
+              0.1701258271932602,
+              0.1151796281337738,
+              0.17012947797775269
+            ],
+            "emotion_intensity": [
+              0.28761404752731323,
+              0.16581742465496063,
+              0.14185571670532227,
+              0.17149342596530914,
+              0.11363983899354935,
+              0.11957952380180359
+            ],
+            "repetition": [
+              0.19365516304969788,
+              0.1955781728029251,
+              0.16296575963497162,
+              0.2059626430273056,
+              0.1525861918926239,
+              0.0892520397901535
+            ],
+            "recency": [
+              0.18802273273468018,
+              0.1761757731437683,
+              0.17721210420131683,
+              0.1983015537261963,
+              0.10730147361755371,
+              0.1529863178730011
+            ]
+          },
+          "confidence": 0.23548093810677528,
+          "model": "pinned-rwkv7-g1d-0.1b",
+          "prompt": "four-dimension-model-appraisal-v3-contextual"
+        }
+      }
+    }
+  ],
+  "primary_human_endpoint_measured": false
+}

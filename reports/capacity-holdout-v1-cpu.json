@@ -1,0 +1,6112 @@
+{
+  "scope": "synthetic fixed-history replay with generated reply forks; no human ratings",
+  "fixture": {
+    "version": "capacity-holdout-v1",
+    "sha256": "01e32495ea2d052fced3b0c0095759da4a078b1dd9df0fb5d82b3f895028fef7",
+    "labels": "curated synthetic retention hypotheses, written before fitting; not human ratings"
+  },
+  "calibration_sha256": "317f266b01f5b1c99e76e1ae5a56fc612c169f7eb5c7df3f67441eeaea8a5160",
+  "budget": 34,
+  "implementation_sha256": {
+    "src/retention.py": "99c867d082f67631ff5e35ca2d3fa6298216cbef7e2291cf0546d064f8fac3bc",
+    "probes/capacity_calibration.py": "86a2574ddec0e7efbf5a50e75ae8a6d0111605c7f74c7d57fa34137276f0265a",
+    "probes/replay_runtime.py": "9db165e77a4bcc7280633ba292601c5181af7133eb509d9792cb86f318f4d468",
+    "probes/capacity_holdout.py": "22ce3c8cdcf084f4b29a54547e6b0895450c2ae27d8e92964ebbd04145d0973a"
+  },
+  "runtime": {
+    "checkpoint_sha256": "e10d7b1930c2644c5c6b194444774d6d82ec8212a78763493149de09aac7d83f",
+    "source_sha256": {
+      "chatrwkv_x070_model.py": "75482aee89a08d2a8c8dbe628110b317fc8d0974ddffbaa52aa19190667305e0",
+      "rwkv_tokenizer.py": "963ed277d1f0d3a110ccb9ccabed529595ca409011ff676c8f0d58a4b004dedd",
+      "rwkv_vocab_v20230424.txt": "e6dee3d4e31b4d5c40ac99508ac6c701ceef4bed681bf2167ce9a908552bca89"
+    },
+    "appraisal_version": "four-dimension-model-appraisal-v3-contextual",
+    "label_order": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "X"
+    ],
+    "strategy": "cpu fp32",
+    "threads": 4,
+    "torch": "2.15.0+cpu",
+    "layers": 12
+  },
+  "arms": [
+    "native",
+    "reselect_equal",
+    "capacity_equal",
+    "capacity_context",
+    "window_context"
+  ],
+  "readout": "ordinal_mean",
+  "window": 3,
+  "generation": {
+    "strategy": "greedy",
+    "token_limit": 32
+  },
+  "history_policy": "scripted shared previous assistant turns; generated replies are not replayed",
+  "archive_policy": "in-memory per-case original dialogue, explicit exact-quote checkpoint only",
+  "eager_policy": "matched readout, reselects at pressure, unrelated checkpoint and correction; no prior score fallback",
+  "weight_selection": "loaded unchanged from calibration, no fitting on holdout",
+  "work": {
+    "forward_calls": 1895,
+    "input_tokens": 61154,
+    "appraisal_calls": 61,
+    "wall_seconds": 255.39
+  },
+  "summary": {
+    "retention": {
+      "ordinal_mean": {
+        "equal": {
+          "n": 8,
+          "points2": 4,
+          "hits": 2,
+          "strict_hits": 2,
+          "ties": 0,
+          "deferred": 3,
+          "predictions": [
+            {
+              "id": "h01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h05",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h06",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h07",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h08",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "global_tuned": {
+          "n": 8,
+          "points2": 4,
+          "hits": 2,
+          "strict_hits": 2,
+          "ties": 0,
+          "deferred": 3,
+          "predictions": [
+            {
+              "id": "h01",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h02",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h03",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h04",
+              "context": "active",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h05",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h06",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h07",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h08",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "context_tuned": {
+          "n": 8,
+          "points2": 4,
+          "hits": 2,
+          "strict_hits": 2,
+          "ties": 0,
+          "deferred": 3,
+          "predictions": [
+            {
+              "id": "h01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h05",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h06",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h07",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h08",
+              "context": "standing",
+              "weights": [
+                20,
+                30,
+                30,
+                20
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        }
+      },
+      "argmax": {
+        "equal": {
+          "n": 8,
+          "points2": 6,
+          "hits": 5,
+          "strict_hits": 1,
+          "ties": 4,
+          "deferred": 3,
+          "predictions": [
+            {
+              "id": "h01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h05",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h06",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h07",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h08",
+              "context": "standing",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "global_tuned": {
+          "n": 8,
+          "points2": 6,
+          "hits": 5,
+          "strict_hits": 1,
+          "ties": 4,
+          "deferred": 3,
+          "predictions": [
+            {
+              "id": "h01",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h02",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h03",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h04",
+              "context": "active",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h05",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h06",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h07",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h08",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        },
+        "context_tuned": {
+          "n": 8,
+          "points2": 6,
+          "hits": 5,
+          "strict_hits": 1,
+          "ties": 4,
+          "deferred": 3,
+          "predictions": [
+            {
+              "id": "h01",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h02",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h03",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h04",
+              "context": "active",
+              "weights": [
+                25,
+                25,
+                25,
+                25
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            },
+            {
+              "id": "h05",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h06",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [
+                "second"
+              ],
+              "tied": false,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 2
+            },
+            {
+              "id": "h07",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "first",
+              "evicted": [
+                "first"
+              ],
+              "tied": true,
+              "deferred": {},
+              "operational_hit": true,
+              "points2": 1
+            },
+            {
+              "id": "h08",
+              "context": "standing",
+              "weights": [
+                30,
+                30,
+                30,
+                10
+              ],
+              "expected": "second",
+              "evicted": [],
+              "tied": false,
+              "deferred": {
+                "incoming": "unranked_residents"
+              },
+              "operational_hit": false,
+              "points2": 0
+            }
+          ]
+        }
+      }
+    },
+    "policy_events": {
+      "reselect_equal": {
+        "pressure_turns": 8,
+        "pressure_rebuilds": 5,
+        "pressure_changes": 5,
+        "quiet_turns": 8,
+        "quiet_rebuilds": 6,
+        "quiet_changes": 6,
+        "correction_turns": 3,
+        "correction_rebuilds": 1,
+        "correction_changes": 3,
+        "correction_old_was_resident": 1,
+        "correction_old_out": 3,
+        "correction_new_in": 0
+      },
+      "capacity_equal": {
+        "pressure_turns": 8,
+        "pressure_rebuilds": 5,
+        "pressure_changes": 5,
+        "quiet_turns": 8,
+        "quiet_rebuilds": 0,
+        "quiet_changes": 0,
+        "correction_turns": 3,
+        "correction_rebuilds": 3,
+        "correction_changes": 3,
+        "correction_old_was_resident": 2,
+        "correction_old_out": 3,
+        "correction_new_in": 3
+      },
+      "capacity_context": {
+        "pressure_turns": 8,
+        "pressure_rebuilds": 5,
+        "pressure_changes": 5,
+        "quiet_turns": 8,
+        "quiet_rebuilds": 0,
+        "quiet_changes": 0,
+        "correction_turns": 3,
+        "correction_rebuilds": 3,
+        "correction_changes": 3,
+        "correction_old_was_resident": 2,
+        "correction_old_out": 3,
+        "correction_new_in": 3
+      }
+    },
+    "rendered_reply_checks": {
+      "related": {
+        "n": 8,
+        "quotes_found": 0,
+        "state_comparison_text_differences": 8,
+        "weight_comparison_text_differences": 0,
+        "arms": {
+          "native": {
+            "expected_marker_present": 1,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "reselect_equal": {
+            "expected_marker_present": 2,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "capacity_equal": {
+            "expected_marker_present": 2,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "capacity_context": {
+            "expected_marker_present": 2,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "window_context": {
+            "expected_marker_present": 1,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          }
+        }
+      },
+      "quiet": {
+        "n": 8,
+        "quotes_found": 0,
+        "state_comparison_text_differences": 8,
+        "weight_comparison_text_differences": 0,
+        "arms": {
+          "native": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "reselect_equal": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "capacity_equal": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "capacity_context": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "window_context": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          }
+        }
+      },
+      "correction_followup": {
+        "n": 3,
+        "quotes_found": 0,
+        "state_comparison_text_differences": 3,
+        "weight_comparison_text_differences": 0,
+        "arms": {
+          "native": {
+            "expected_marker_present": 1,
+            "obsolete_marker_present": 1,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 3
+            }
+          },
+          "reselect_equal": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 1,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 3
+            }
+          },
+          "capacity_equal": {
+            "expected_marker_present": 1,
+            "obsolete_marker_present": 1,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 3
+            }
+          },
+          "capacity_context": {
+            "expected_marker_present": 1,
+            "obsolete_marker_present": 1,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 3
+            }
+          },
+          "window_context": {
+            "expected_marker_present": 2,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 3
+            }
+          }
+        }
+      },
+      "exact_quote": {
+        "n": 8,
+        "quotes_found": 8,
+        "state_comparison_text_differences": 8,
+        "weight_comparison_text_differences": 0,
+        "arms": {
+          "native": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "reselect_equal": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "capacity_equal": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "capacity_context": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          },
+          "window_context": {
+            "expected_marker_present": 0,
+            "obsolete_marker_present": 0,
+            "verbatim_excerpt_in_reply": 0,
+            "empty": 0,
+            "stop": {
+              "turn_boundary": 8
+            }
+          }
+        }
+      }
+    },
+    "primary_human_endpoint_measured": false,
+    "human_ratings_collected": false,
+    "answer_accuracy_measured": false
+  },
+  "cases": [
+    {
+      "row": {
+        "id": "h01",
+        "context": "active",
+        "expected_victim": "first",
+        "lengths": {
+          "first": 13,
+          "second": 16,
+          "incoming": 14,
+          "updated": 15
+        },
+        "ratings": {
+          "first": {
+            "importance": 1,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.1940237581729889,
+                0.20495259761810303,
+                0.09483937174081802,
+                0.18514485657215118,
+                0.1443178951740265,
+                0.1767214685678482
+              ],
+              "emotion_intensity": [
+                0.2516552805900574,
+                0.19540973007678986,
+                0.11296512931585312,
+                0.1815439611673355,
+                0.1307418793439865,
+                0.1276840716600418
+              ],
+              "repetition": [
+                0.16880707442760468,
+                0.2435479611158371,
+                0.14385981857776642,
+                0.20520778000354767,
+                0.16056190431118011,
+                0.07801546901464462
+              ],
+              "recency": [
+                0.1667260378599167,
+                0.2238524705171585,
+                0.13672876358032227,
+                0.20495793223381042,
+                0.12982048094272614,
+                0.13791432976722717
+              ]
+            },
+            "confidence": 0.231002077460289,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": 1,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.2031344622373581,
+                0.2260650396347046,
+                0.07695956528186798,
+                0.21234191954135895,
+                0.1452297419309616,
+                0.13626931607723236
+              ],
+              "emotion_intensity": [
+                0.26706668734550476,
+                0.22308692336082458,
+                0.09052319824695587,
+                0.19388893246650696,
+                0.1319960057735443,
+                0.09343831986188889
+              ],
+              "repetition": [
+                0.16805218160152435,
+                0.25938454270362854,
+                0.12239564955234528,
+                0.22048883140087128,
+                0.16524606943130493,
+                0.064432792365551
+              ],
+              "recency": [
+                0.1817808598279953,
+                0.2412216067314148,
+                0.10005687922239304,
+                0.2204677015542984,
+                0.13337819278240204,
+                0.12309477478265762
+              ]
+            },
+            "confidence": 0.24843446910381317,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "The hotel mural was red.",
+        "second": "Send the pickup crew to Cedar Gate.",
+        "incoming": "Take the labelled cargo crate.",
+        "updated": "Send the pickup crew to Ash Gate."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": 46.21915,
+                  "second": 45.863775,
+                  "incoming": 44.614469
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 9,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 9,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second"
+              ],
+              "added": [],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second"
+              ],
+              "details": {
+                "scores": {
+                  "first": null,
+                  "second": 44.563913,
+                  "incoming": null
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        },
+        {
+          "kind": "correction",
+          "obsolete": "second",
+          "active": "updated",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "first",
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "scores": {
+                  "first": 43.95325,
+                  "incoming": 42.9998,
+                  "updated": 39.734187
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "updated"
+              ],
+              "added": [
+                "updated"
+              ],
+              "removed": [
+                "incoming"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "updated"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "updated"
+                ],
+                "retired": [],
+                "evicted": [
+                  "incoming"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "updated",
+                    "residents": [
+                      "first",
+                      "incoming"
+                    ],
+                    "needed": 8,
+                    "evicted": [
+                      "incoming"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "updated"
+              ],
+              "added": [
+                "updated"
+              ],
+              "removed": [
+                "incoming"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "updated"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "updated"
+                ],
+                "retired": [],
+                "evicted": [
+                  "incoming"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "updated",
+                    "residents": [
+                      "first",
+                      "incoming"
+                    ],
+                    "needed": 8,
+                    "evicted": [
+                      "incoming"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {
+        "capacity_equal_correction_competition": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.2085614651441574,
+                0.19474469125270844,
+                0.0933840274810791,
+                0.19556844234466553,
+                0.1383609175682068,
+                0.16938051581382751
+              ],
+              "emotion_intensity": [
+                0.2274245172739029,
+                0.1920912265777588,
+                0.11591354757547379,
+                0.19917906820774078,
+                0.1318238228559494,
+                0.13356782495975494
+              ],
+              "repetition": [
+                0.17511622607707977,
+                0.23568497598171234,
+                0.141498401761055,
+                0.21290627121925354,
+                0.15534061193466187,
+                0.07945357263088226
+              ],
+              "recency": [
+                0.1911684274673462,
+                0.22672614455223083,
+                0.13500936329364777,
+                0.21292075514793396,
+                0.12592925131320953,
+                0.1082461029291153
+              ]
+            },
+            "confidence": 0.22459927573800087,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "incoming": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.23402245342731476,
+                0.20698478817939758,
+                0.07933253794908524,
+                0.164605513215065,
+                0.14934611320495605,
+                0.16570855677127838
+              ],
+              "emotion_intensity": [
+                0.2502475380897522,
+                0.20499347150325775,
+                0.09990520030260086,
+                0.17866161465644836,
+                0.1381818950176239,
+                0.12801027297973633
+              ],
+              "repetition": [
+                0.1875162124633789,
+                0.24170435965061188,
+                0.12770488858222961,
+                0.19447435438632965,
+                0.1670868694782257,
+                0.08151338249444962
+              ],
+              "recency": [
+                0.19938093423843384,
+                0.23882775008678436,
+                0.11687236279249191,
+                0.18074274063110352,
+                0.15240827202796936,
+                0.1117679625749588
+              ]
+            },
+            "confidence": 0.2412005253136158,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        },
+        "capacity_context_correction_competition": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.2085614651441574,
+                0.19474469125270844,
+                0.0933840274810791,
+                0.19556844234466553,
+                0.1383609175682068,
+                0.16938051581382751
+              ],
+              "emotion_intensity": [
+                0.2274245172739029,
+                0.1920912265777588,
+                0.11591354757547379,
+                0.19917906820774078,
+                0.1318238228559494,
+                0.13356782495975494
+              ],
+              "repetition": [
+                0.17511622607707977,
+                0.23568497598171234,
+                0.141498401761055,
+                0.21290627121925354,
+                0.15534061193466187,
+                0.07945357263088226
+              ],
+              "recency": [
+                0.1911684274673462,
+                0.22672614455223083,
+                0.13500936329364777,
+                0.21292075514793396,
+                0.12592925131320953,
+                0.1082461029291153
+              ]
+            },
+            "confidence": 0.22459927573800087,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "incoming": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.23402245342731476,
+                0.20698478817939758,
+                0.07933253794908524,
+                0.164605513215065,
+                0.14934611320495605,
+                0.16570855677127838
+              ],
+              "emotion_intensity": [
+                0.2502475380897522,
+                0.20499347150325775,
+                0.09990520030260086,
+                0.17866161465644836,
+                0.1381818950176239,
+                0.12801027297973633
+              ],
+              "repetition": [
+                0.1875162124633789,
+                0.24170435965061188,
+                0.12770488858222961,
+                0.19447435438632965,
+                0.1670868694782257,
+                0.08151338249444962
+              ],
+              "recency": [
+                0.19938093423843384,
+                0.23882775008678436,
+                0.11687236279249191,
+                0.18074274063110352,
+                0.15240827202796936,
+                0.1117679625749588
+              ]
+            },
+            "confidence": 0.2412005253136158,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "Before I call the pickup crew, tell me which entrance they're using.",
+          "history_turns": 8,
+          "expected_marker": "Cedar Gate",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "The entrance is the one that is closest to the exit.",
+              "stop": "turn_boundary",
+              "tokens": 13
+            },
+            "reselect_equal": {
+              "text": "The entrance is the one that is used for the pickup crew.",
+              "stop": "turn_boundary",
+              "tokens": 14
+            },
+            "capacity_equal": {
+              "text": "The hotel mural was red.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            },
+            "capacity_context": {
+              "text": "The hotel mural was red.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            },
+            "window_context": {
+              "text": "The cargo crate was red.",
+              "stop": "turn_boundary",
+              "tokens": 8
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 9,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "second"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "reselect_equal": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_equal": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_context": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "window_context": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            }
+          }
+        },
+        {
+          "kind": "correction_followup",
+          "user": "Where should I send the pickup crew now?",
+          "history_turns": 15,
+          "expected_marker": "Ash Gate",
+          "obsolete_marker": "Cedar Gate",
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "updated"
+            ],
+            "reselect_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "first",
+              "updated"
+            ],
+            "capacity_context": [
+              "first",
+              "updated"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "reselect_equal": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_equal": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_context": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "window_context": {
+              "text": "Send the crew to Ash Gate.",
+              "stop": "turn_boundary",
+              "tokens": 8
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"red hotel mural\" and quote it exactly.",
+          "history_turns": 16,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "red hotel mural",
+          "evidence": [
+            {
+              "turn": 2,
+              "role": "user",
+              "text": "I was completely blown away by the red hotel mural!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "updated"
+            ],
+            "reselect_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "first",
+              "updated"
+            ],
+            "capacity_context": [
+              "first",
+              "updated"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I'm glad you liked it.",
+              "stop": "turn_boundary",
+              "tokens": 8
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "I was completely blown away by the red hotel mural!",
+          "Noted."
+        ],
+        [
+          "Send the pickup crew to Cedar Gate; that is our confirmed entrance.",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "Also remember to take the labelled cargo crate with us.",
+          "Understood."
+        ],
+        [
+          "Before I call the pickup crew, tell me which entrance they're using.",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ],
+        [
+          "One confirmed change: the pickup crew now uses Ash Gate instead of Cedar Gate.",
+          "Understood."
+        ],
+        [
+          "Set that aside for a moment. What is the color of fresh grass?",
+          "Usually green."
+        ],
+        [
+          "What object tells the time?",
+          "A clock."
+        ],
+        [
+          "What is the opposite of heavy?",
+          "Light."
+        ],
+        [
+          "Name a spring month.",
+          "April."
+        ],
+        [
+          "Where should I send the pickup crew now?",
+          "I will use the latest confirmed version."
+        ]
+      ]
+    },
+    {
+      "row": {
+        "id": "h02",
+        "context": "active",
+        "expected_victim": "second",
+        "lengths": {
+          "first": 14,
+          "second": 15,
+          "incoming": 13,
+          "updated": 14
+        },
+        "ratings": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.27684250473976135,
+                0.2418821007013321,
+                0.0830235481262207,
+                0.11559077352285385,
+                0.11514567583799362,
+                0.167515367269516
+              ],
+              "emotion_intensity": [
+                0.33769741654396057,
+                0.22485536336898804,
+                0.10261311382055283,
+                0.12681615352630615,
+                0.09973794966936111,
+                0.10827996581792831
+              ],
+              "repetition": [
+                0.23126116394996643,
+                0.25138169527053833,
+                0.121519535779953,
+                0.14658863842487335,
+                0.1436544805765152,
+                0.1055944636464119
+              ],
+              "recency": [
+                0.24712993204593658,
+                0.24839653074741364,
+                0.1277414858341217,
+                0.13456882536411285,
+                0.10990289598703384,
+                0.13226041197776794
+              ]
+            },
+            "confidence": 0.2785795368254185,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": null,
+            "label_probabilities": {
+              "importance": [
+                0.251924604177475,
+                0.2053433656692505,
+                0.07731174677610397,
+                0.1275603324174881,
+                0.10643256455659866,
+                0.2314273864030838
+              ],
+              "emotion_intensity": [
+                0.32191702723503113,
+                0.21543733775615692,
+                0.0946279987692833,
+                0.13781073689460754,
+                0.09334742277860641,
+                0.13685943186283112
+              ],
+              "repetition": [
+                0.2293153703212738,
+                0.23741690814495087,
+                0.11624667793512344,
+                0.15701311826705933,
+                0.13009150326251984,
+                0.12991639971733093
+              ],
+              "recency": [
+                0.2004847228527069,
+                0.20126047730445862,
+                0.12474928796291351,
+                0.1591693013906479,
+                0.09809784591197968,
+                0.21623842418193817
+              ]
+            },
+            "confidence": 0.2568742409348488,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "The Tuesday briefing starts at eight.",
+        "second": "I was delighted by the glass sculpture.",
+        "incoming": "Bring the signed attendance sheet.",
+        "updated": "The Tuesday briefing starts at ten."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "incoming",
+                "first"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "incoming",
+                "first"
+              ],
+              "details": {
+                "scores": {
+                  "first": 37.8478,
+                  "second": null,
+                  "incoming": 38.656906
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {
+                  "incoming": "unranked_residents"
+                },
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 8,
+                    "evicted": [],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {
+                  "incoming": "unranked_residents"
+                },
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 8,
+                    "evicted": [],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "incoming",
+                "first"
+              ],
+              "after": [],
+              "added": [],
+              "removed": [
+                "incoming",
+                "first"
+              ],
+              "rebuild": true,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": null,
+                  "second": null,
+                  "incoming": null
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        },
+        {
+          "kind": "correction",
+          "obsolete": "first",
+          "active": "updated",
+          "arms": {
+            "reselect_equal": {
+              "before": [],
+              "after": [
+                "second",
+                "incoming"
+              ],
+              "added": [
+                "second",
+                "incoming"
+              ],
+              "removed": [],
+              "rebuild": false,
+              "written": [
+                "second",
+                "incoming"
+              ],
+              "details": {
+                "scores": {
+                  "second": 43.013606,
+                  "incoming": 42.196875,
+                  "updated": 35.917738
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "updated"
+              ],
+              "added": [
+                "updated"
+              ],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second",
+                "updated"
+              ],
+              "details": {
+                "cards": [
+                  "second",
+                  "updated"
+                ],
+                "retired": [
+                  "first"
+                ],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "updated"
+              ],
+              "added": [
+                "updated"
+              ],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second",
+                "updated"
+              ],
+              "details": {
+                "cards": [
+                  "second",
+                  "updated"
+                ],
+                "retired": [
+                  "first"
+                ],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {},
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "I am setting my alarm for the Tuesday briefing. What time does it start?",
+          "history_turns": 8,
+          "expected_marker": "eight",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "second"
+            ],
+            "reselect_equal": [
+              "incoming",
+              "first"
+            ],
+            "capacity_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_context": [
+              "first",
+              "second"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "It starts at 8:00.",
+              "stop": "turn_boundary",
+              "tokens": 8
+            },
+            "reselect_equal": {
+              "text": "It starts at eight.",
+              "stop": "turn_boundary",
+              "tokens": 6
+            },
+            "capacity_equal": {
+              "text": "It starts at eight.",
+              "stop": "turn_boundary",
+              "tokens": 6
+            },
+            "capacity_context": {
+              "text": "It starts at eight.",
+              "stop": "turn_boundary",
+              "tokens": 6
+            },
+            "window_context": {
+              "text": "The glass sculpture is beautiful.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 9,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "second"
+            ],
+            "reselect_equal": [],
+            "capacity_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_context": [
+              "first",
+              "second"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I am setting my alarm for the Tuesday briefing.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            }
+          }
+        },
+        {
+          "kind": "correction_followup",
+          "user": "I am about to set the alarm. What time is the Tuesday briefing now?",
+          "history_turns": 15,
+          "expected_marker": "ten",
+          "obsolete_marker": "eight",
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "second",
+              "updated"
+            ],
+            "reselect_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "second",
+              "updated"
+            ],
+            "capacity_context": [
+              "second",
+              "updated"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "I will set the alarm at ten.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "reselect_equal": {
+              "text": "I will use the confirmed details when they apply.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_equal": {
+              "text": "The Tuesday briefing is now at ten.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_context": {
+              "text": "The Tuesday briefing is now at ten.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "window_context": {
+              "text": "What is the Tuesday briefing?",
+              "stop": "turn_boundary",
+              "tokens": 7
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"glass sculpture\" and quote it exactly.",
+          "history_turns": 16,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "glass sculpture",
+          "evidence": [
+            {
+              "turn": 3,
+              "role": "user",
+              "text": "The glass sculpture at the station was spectacular; I was delighted!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "second",
+              "updated"
+            ],
+            "reselect_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "second",
+              "updated"
+            ],
+            "capacity_context": [
+              "second",
+              "updated"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I am pleased to hear that you enjoyed the sculpture.",
+              "stop": "turn_boundary",
+              "tokens": 12
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "For the real Tuesday briefing, eight is absolutely essential; everyone has to be there!",
+          "Noted."
+        ],
+        [
+          "The glass sculpture at the station was spectacular; I was delighted!",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "Remember to bring the signed attendance sheet to the briefing.",
+          "Understood."
+        ],
+        [
+          "I am setting my alarm for the Tuesday briefing. What time does it start?",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ],
+        [
+          "The new confirmed time for the Tuesday briefing is ten; eight no longer applies.",
+          "Understood."
+        ],
+        [
+          "Set that aside for a moment. What is the color of fresh grass?",
+          "Usually green."
+        ],
+        [
+          "What object tells the time?",
+          "A clock."
+        ],
+        [
+          "What is the opposite of heavy?",
+          "Light."
+        ],
+        [
+          "Name a spring month.",
+          "April."
+        ],
+        [
+          "I am about to set the alarm. What time is the Tuesday briefing now?",
+          "I will use the latest confirmed version."
+        ]
+      ]
+    },
+    {
+      "row": {
+        "id": "h03",
+        "context": "active",
+        "expected_victim": "first",
+        "lengths": {
+          "first": 16,
+          "second": 15,
+          "incoming": 14
+        },
+        "ratings": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.23977431654930115,
+                0.18265634775161743,
+                0.10856559127569199,
+                0.16131053864955902,
+                0.14111799001693726,
+                0.16657519340515137
+              ],
+              "emotion_intensity": [
+                0.26230669021606445,
+                0.1924596130847931,
+                0.1297730803489685,
+                0.17351432144641876,
+                0.13270170986652374,
+                0.10924451798200607
+              ],
+              "repetition": [
+                0.18081532418727875,
+                0.22098802030086517,
+                0.1482168585062027,
+                0.19908753037452698,
+                0.17278555035591125,
+                0.07810673862695694
+              ],
+              "recency": [
+                0.21253308653831482,
+                0.21294423937797546,
+                0.1529465764760971,
+                0.1822246015071869,
+                0.11750879138708115,
+                0.12184269726276398
+              ]
+            },
+            "confidence": 0.23400331661105156,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.24642625451087952,
+                0.21551798284053802,
+                0.08908867835998535,
+                0.1855044811964035,
+                0.1398615688085556,
+                0.1236010268330574
+              ],
+              "emotion_intensity": [
+                0.27446120977401733,
+                0.22730113565921783,
+                0.1046098992228508,
+                0.18422922492027283,
+                0.1267549842596054,
+                0.08264347910881042
+              ],
+              "repetition": [
+                0.1898636817932129,
+                0.25972121953964233,
+                0.128656268119812,
+                0.20316405594348907,
+                0.1579466611146927,
+                0.06064804270863533
+              ],
+              "recency": [
+                0.20915697515010834,
+                0.25902190804481506,
+                0.11600087583065033,
+                0.18980960547924042,
+                0.12840844690799713,
+                0.09760226309299469
+              ]
+            },
+            "confidence": 0.25990764796733856,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "We used the indigo hatch last year.",
+        "second": "The courier needs the side ramp.",
+        "incoming": "Leave the parcel sealed for pickup."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": 44.579969,
+                  "second": 43.561006,
+                  "incoming": 41.014919
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 11,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 11,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": 45.727475,
+                  "second": 44.541206,
+                  "incoming": 42.9232
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {},
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "Give the courier a short direction for where to enter.",
+          "history_turns": 9,
+          "expected_marker": "side ramp",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "I'll send you a map.",
+              "stop": "turn_boundary",
+              "tokens": 8
+            },
+            "reselect_equal": {
+              "text": "I'll give you a short direction.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_equal": {
+              "text": "I'll give you a short direction.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_context": {
+              "text": "I'll give you a short direction.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "window_context": {
+              "text": "Understood.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 10,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_context": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "window_context": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"indigo hatch\" and quote it exactly.",
+          "history_turns": 11,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "indigo hatch",
+          "evidence": [
+            {
+              "turn": 4,
+              "role": "user",
+              "text": "I found last year's photo of the indigo hatch."
+            },
+            {
+              "turn": 2,
+              "role": "user",
+              "text": "I was so proud when we first opened the indigo hatch last year!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I'm glad you found it interesting.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "I was so proud when we first opened the indigo hatch last year!",
+          "Noted."
+        ],
+        [
+          "The courier must use the side ramp for today's shipment.",
+          "Noted."
+        ],
+        [
+          "I found last year's photo of the indigo hatch.",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "Please remember that the parcel must remain sealed for pickup.",
+          "Understood."
+        ],
+        [
+          "Give the courier a short direction for where to enter.",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ]
+      ]
+    },
+    {
+      "row": {
+        "id": "h04",
+        "context": "active",
+        "expected_victim": "second",
+        "lengths": {
+          "first": 15,
+          "second": 15,
+          "incoming": 14
+        },
+        "ratings": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": null,
+            "label_probabilities": {
+              "importance": [
+                0.2506452798843384,
+                0.19968487322330475,
+                0.09706401824951172,
+                0.14389249682426453,
+                0.08324915170669556,
+                0.22546428442001343
+              ],
+              "emotion_intensity": [
+                0.26865795254707336,
+                0.18859072029590607,
+                0.11999324709177017,
+                0.16306696832180023,
+                0.08764005452394485,
+                0.1720510721206665
+              ],
+              "repetition": [
+                0.18368729948997498,
+                0.2442208230495453,
+                0.1544734239578247,
+                0.1751977801322937,
+                0.1250968724489212,
+                0.1173238754272461
+              ],
+              "recency": [
+                0.18558162450790405,
+                0.199042409658432,
+                0.1572570502758026,
+                0.16496403515338898,
+                0.07542194426059723,
+                0.21773290634155273
+              ]
+            },
+            "confidence": 0.24531424045562744,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 3,
+            "label_probabilities": {
+              "importance": [
+                0.24311093986034393,
+                0.18827131390571594,
+                0.07162094861268997,
+                0.16499145328998566,
+                0.10581450164318085,
+                0.22619083523750305
+              ],
+              "emotion_intensity": [
+                0.27016887068748474,
+                0.19371666014194489,
+                0.10039857774972916,
+                0.18891187012195587,
+                0.10156891494989395,
+                0.14523519575595856
+              ],
+              "repetition": [
+                0.18554392457008362,
+                0.24214690923690796,
+                0.12726138532161713,
+                0.1899174302816391,
+                0.13277779519557953,
+                0.12235267460346222
+              ],
+              "recency": [
+                0.1631254404783249,
+                0.2034188210964203,
+                0.12693347036838531,
+                0.20543190836906433,
+                0.1001921072602272,
+                0.20089827477931976
+              ]
+            },
+            "confidence": 0.24021465703845024,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "Use the service lift for the piano.",
+        "second": "The lobby played a catchy song.",
+        "incoming": "Bring the padded moving blanket."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second"
+              ],
+              "added": [],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second"
+              ],
+              "details": {
+                "scores": {
+                  "first": null,
+                  "second": 43.001219,
+                  "incoming": null
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {
+                  "incoming": "unranked_residents"
+                },
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 10,
+                    "evicted": [],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {
+                  "incoming": "unranked_residents"
+                },
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 10,
+                    "evicted": [],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "second"
+              ],
+              "after": [],
+              "added": [],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": null,
+                  "second": null,
+                  "incoming": null
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {},
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "Write a one-sentence direction to the crew about getting the piano upstairs.",
+          "history_turns": 9,
+          "expected_marker": "service lift",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "second"
+            ],
+            "reselect_equal": [
+              "second"
+            ],
+            "capacity_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_context": [
+              "first",
+              "second"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "The crew will be waiting for you upstairs.",
+              "stop": "turn_boundary",
+              "tokens": 10
+            },
+            "reselect_equal": {
+              "text": "The crew will be upstairs.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            },
+            "capacity_equal": {
+              "text": "The crew will be upstairs.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            },
+            "capacity_context": {
+              "text": "The crew will be upstairs.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            },
+            "window_context": {
+              "text": "The lobby played a catchy song.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 10,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "second"
+            ],
+            "reselect_equal": [],
+            "capacity_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_context": [
+              "first",
+              "second"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "The piano has six strings.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"catchy song\" and quote it exactly.",
+          "history_turns": 11,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "catchy song",
+          "evidence": [
+            {
+              "turn": 3,
+              "role": "user",
+              "text": "That catchy song in the lobby was unbelievably good!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "second"
+            ],
+            "reselect_equal": [],
+            "capacity_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_context": [
+              "first",
+              "second"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I will use the service lift for the piano.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "For this piano job, the building only allows us to use the service lift.",
+          "Noted."
+        ],
+        [
+          "That catchy song in the lobby was unbelievably good!",
+          "Noted."
+        ],
+        [
+          "The building still requires the service lift for the piano.",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "Remember the padded moving blanket for the piano job.",
+          "Understood."
+        ],
+        [
+          "Write a one-sentence direction to the crew about getting the piano upstairs.",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ]
+      ]
+    },
+    {
+      "row": {
+        "id": "h05",
+        "context": "standing",
+        "expected_victim": "first",
+        "lengths": {
+          "first": 14,
+          "second": 14,
+          "incoming": 14
+        },
+        "ratings": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.24074316024780273,
+                0.18075929582118988,
+                0.09351318329572678,
+                0.1585293412208557,
+                0.16029268503189087,
+                0.16616228222846985
+              ],
+              "emotion_intensity": [
+                0.26938512921333313,
+                0.18011794984340668,
+                0.12271522730588913,
+                0.16535678505897522,
+                0.14232218265533447,
+                0.12010279297828674
+              ],
+              "repetition": [
+                0.19953475892543793,
+                0.2162099927663803,
+                0.13806380331516266,
+                0.17994605004787445,
+                0.17988085746765137,
+                0.08636454492807388
+              ],
+              "recency": [
+                0.1739463061094284,
+                0.19129523634910583,
+                0.15377263724803925,
+                0.185061514377594,
+                0.15239761769771576,
+                0.14352671802043915
+              ]
+            },
+            "confidence": 0.2294083796441555,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.2318045049905777,
+                0.20208613574504852,
+                0.08877887576818466,
+                0.1760486364364624,
+                0.1608932465314865,
+                0.1403886079788208
+              ],
+              "emotion_intensity": [
+                0.2813083529472351,
+                0.20600761473178864,
+                0.10912159830331802,
+                0.1684863567352295,
+                0.135523721575737,
+                0.09955236315727234
+              ],
+              "repetition": [
+                0.20035718381404877,
+                0.22784532606601715,
+                0.13140979409217834,
+                0.1904415339231491,
+                0.1776646375656128,
+                0.07228148728609085
+              ],
+              "recency": [
+                0.19137345254421234,
+                0.20763568580150604,
+                0.13559426367282867,
+                0.191074937582016,
+                0.15598918497562408,
+                0.11833252757787704
+              ]
+            },
+            "confidence": 0.237148467451334,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "I loved the ginger cookies once.",
+        "second": "Keep handwritten sketches uncompressed.",
+        "incoming": "Include working drafts in my archives."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": 45.840463,
+                  "second": 45.318519,
+                  "incoming": 43.935706
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 8,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 8,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "first"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": true,
+              "written": [
+                "second",
+                "first"
+              ],
+              "details": {
+                "scores": {
+                  "first": 45.745613,
+                  "second": 46.653556,
+                  "incoming": null
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {},
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "How would you store my handwritten sketches in a new project archive?",
+          "history_turns": 8,
+          "expected_marker": "uncompressed",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "I'd keep them in a separate folder under the project archive.",
+              "stop": "turn_boundary",
+              "tokens": 14
+            },
+            "reselect_equal": {
+              "text": "I would keep them in a new project archive.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_equal": {
+              "text": "I'd keep them in a new project archive.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_context": {
+              "text": "I'd keep them in a new project archive.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "window_context": {
+              "text": "Understood.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 9,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "second",
+              "first"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "Understood.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"ginger cookies\" and quote it exactly.",
+          "history_turns": 10,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "ginger cookies",
+          "evidence": [
+            {
+              "turn": 2,
+              "role": "user",
+              "text": "The ginger cookies from that one visit were incredible!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "second",
+              "first"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "That was a great experience!",
+              "stop": "turn_boundary",
+              "tokens": 7
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I love the ginger cookies from that one visit.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "The ginger cookies from that one visit were incredible!",
+          "Noted."
+        ],
+        [
+          "For all my project archives, keep handwritten sketches uncompressed.",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "One more rule to remember: include working drafts in my archives.",
+          "Understood."
+        ],
+        [
+          "How would you store my handwritten sketches in a new project archive?",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ]
+      ]
+    },
+    {
+      "row": {
+        "id": "h06",
+        "context": "standing",
+        "expected_victim": "second",
+        "lengths": {
+          "first": 14,
+          "second": 15,
+          "incoming": 15
+        },
+        "ratings": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 2,
+            "label_probabilities": {
+              "importance": [
+                0.20962832868099213,
+                0.20258572697639465,
+                0.13561341166496277,
+                0.17293468117713928,
+                0.1546955108642578,
+                0.12454232573509216
+              ],
+              "emotion_intensity": [
+                0.22123228013515472,
+                0.19209420680999756,
+                0.16911187767982483,
+                0.17561516165733337,
+                0.1446094661951065,
+                0.09733697772026062
+              ],
+              "repetition": [
+                0.16060157120227814,
+                0.21791671216487885,
+                0.18193167448043823,
+                0.18988707661628723,
+                0.1704251617193222,
+                0.07923775166273117
+              ],
+              "recency": [
+                0.15956635773181915,
+                0.20733413100242615,
+                0.2180355191230774,
+                0.17535993456840515,
+                0.1386719048023224,
+                0.10103210806846619
+              ]
+            },
+            "confidence": 0.21670321002602577,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.22003665566444397,
+                0.20098401606082916,
+                0.0954316183924675,
+                0.13651590049266815,
+                0.13440610468387604,
+                0.21262571215629578
+              ],
+              "emotion_intensity": [
+                0.27045002579689026,
+                0.21047578752040863,
+                0.12106326222419739,
+                0.1456906497478485,
+                0.1166674792766571,
+                0.13565278053283691
+              ],
+              "repetition": [
+                0.18148531019687653,
+                0.22763976454734802,
+                0.14471077919006348,
+                0.17721357941627502,
+                0.16655100882053375,
+                0.10239962488412857
+              ],
+              "recency": [
+                0.17480404675006866,
+                0.23157674074172974,
+                0.15568974614143372,
+                0.16636864840984344,
+                0.11738885939121246,
+                0.15417195856571198
+              ]
+            },
+            "confidence": 0.237425796687603,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "Use surname first on my labels.",
+        "second": "I noticed a small orange kite.",
+        "incoming": "Put inventory codes on the last line."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "scores": {
+                  "first": 47.259075,
+                  "second": 43.546975,
+                  "incoming": 43.569237
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 10,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "second"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 10,
+                    "evicted": [
+                      "second"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": 47.481169,
+                  "second": null,
+                  "incoming": 43.823687
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {},
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "When drafting a fresh label for Mara Lee, how do you put her name?",
+          "history_turns": 9,
+          "expected_marker": "Lee Mara",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "I put her name on the last line.",
+              "stop": "turn_boundary",
+              "tokens": 10
+            },
+            "reselect_equal": {
+              "text": "I put her name first on the last line.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_equal": {
+              "text": "I put her name first on the last line.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_context": {
+              "text": "I put her name first on the last line.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "window_context": {
+              "text": "Understood.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 10,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "reselect_equal": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_equal": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_context": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "window_context": {
+              "text": "Understood.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"orange kite\" and quote it exactly.",
+          "history_turns": 11,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "orange kite",
+          "evidence": [
+            {
+              "turn": 4,
+              "role": "user",
+              "text": "I was absolutely delighted to see the little orange kite today!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_context": [
+              "first",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I'm glad you enjoyed it!",
+              "stop": "turn_boundary",
+              "tokens": 8
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "For all my inventory labels, use surname first.",
+          "Noted."
+        ],
+        [
+          "Please keep putting surnames first on the labels.",
+          "Noted."
+        ],
+        [
+          "I was absolutely delighted to see the little orange kite today!",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "Remember for my labels: put inventory codes on the last line.",
+          "Understood."
+        ],
+        [
+          "When drafting a fresh label for Mara Lee, how do you put her name?",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ]
+      ]
+    },
+    {
+      "row": {
+        "id": "h07",
+        "context": "standing",
+        "expected_victim": "first",
+        "lengths": {
+          "first": 16,
+          "second": 15,
+          "incoming": 15
+        },
+        "ratings": {
+          "first": {
+            "importance": 1,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.2166801542043686,
+                0.21971604228019714,
+                0.12052924185991287,
+                0.14412972331047058,
+                0.1487627923488617,
+                0.15018202364444733
+              ],
+              "emotion_intensity": [
+                0.22244948148727417,
+                0.19786302745342255,
+                0.15166513621807098,
+                0.15996472537517548,
+                0.15786577761173248,
+                0.1101919412612915
+              ],
+              "repetition": [
+                0.14643476903438568,
+                0.2163606733083725,
+                0.1558918058872223,
+                0.18551431596279144,
+                0.20689710974693298,
+                0.0889013260602951
+              ],
+              "recency": [
+                0.16185125708580017,
+                0.20571349561214447,
+                0.1785140484571457,
+                0.16791607439517975,
+                0.13718751072883606,
+                0.1488175392150879
+              ]
+            },
+            "confidence": 0.21605992317199707,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": 1,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.2047252207994461,
+                0.225639209151268,
+                0.0803956538438797,
+                0.16278956830501556,
+                0.17011764645576477,
+                0.1563326120376587
+              ],
+              "emotion_intensity": [
+                0.23292697966098785,
+                0.22625383734703064,
+                0.10890569537878036,
+                0.172340989112854,
+                0.1616891473531723,
+                0.097883440554142
+              ],
+              "repetition": [
+                0.1534832864999771,
+                0.2320055514574051,
+                0.1189388632774353,
+                0.19227319955825806,
+                0.2117210477590561,
+                0.09157809615135193
+              ],
+              "recency": [
+                0.16231968998908997,
+                0.21598118543624878,
+                0.12046867609024048,
+                0.18746204674243927,
+                0.17361792922019958,
+                0.14015048742294312
+              ]
+            },
+            "confidence": 0.22663823142647743,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "I tried a cinnamon latte on holiday.",
+        "second": "Share my handouts in large print.",
+        "incoming": "Show the event date below the title."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "first"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": true,
+              "written": [
+                "second",
+                "first"
+              ],
+              "details": {
+                "scores": {
+                  "first": 47.249819,
+                  "second": 48.145988,
+                  "incoming": 43.013875
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "second",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "first"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 12,
+                    "evicted": [
+                      "first"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second",
+                "incoming"
+              ],
+              "details": {
+                "cards": [
+                  "second",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [
+                  "first"
+                ],
+                "deferred": {},
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 12,
+                    "evicted": [
+                      "first"
+                    ],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "second",
+                "first"
+              ],
+              "after": [
+                "second",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second",
+                "incoming"
+              ],
+              "details": {
+                "scores": {
+                  "first": null,
+                  "second": 47.625263,
+                  "incoming": 42.026612
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "second",
+                "incoming"
+              ],
+              "after": [
+                "second",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "second",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "second",
+                "incoming"
+              ],
+              "after": [
+                "second",
+                "incoming"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "second",
+                  "incoming"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {},
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "I need another handout. What print format should you use for me?",
+          "history_turns": 9,
+          "expected_marker": "large print",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "second",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "second",
+              "first"
+            ],
+            "capacity_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_context": [
+              "second",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "I'm not sure. Please share your handouts in large print.",
+              "stop": "turn_boundary",
+              "tokens": 15
+            },
+            "reselect_equal": {
+              "text": "I'm not sure.",
+              "stop": "turn_boundary",
+              "tokens": 6
+            },
+            "capacity_equal": {
+              "text": "I can use a PDF or a Word document.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "capacity_context": {
+              "text": "I can use a PDF or a Word document.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            },
+            "window_context": {
+              "text": "I'll use a large print format.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 10,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "second",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_context": [
+              "second",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "reselect_equal": {
+              "text": "Understood.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_context": {
+              "text": "A violin is a stringed instrument.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "window_context": {
+              "text": "Understood.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"cinnamon latte\" and quote it exactly.",
+          "history_turns": 11,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "cinnamon latte",
+          "evidence": [
+            {
+              "turn": 4,
+              "role": "user",
+              "text": "I told a friend about that cinnamon latte."
+            },
+            {
+              "turn": 2,
+              "role": "user",
+              "text": "That cinnamon latte on holiday made me so happy!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "second",
+              "incoming"
+            ],
+            "reselect_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_context": [
+              "second",
+              "incoming"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I will use the confirmed detail where it applies.",
+              "stop": "turn_boundary",
+              "tokens": 11
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "That cinnamon latte on holiday made me so happy!",
+          "Noted."
+        ],
+        [
+          "From now on please share my handouts in large print.",
+          "Noted."
+        ],
+        [
+          "I told a friend about that cinnamon latte.",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "Remember to show the event date immediately below the title on all handouts.",
+          "Understood."
+        ],
+        [
+          "I need another handout. What print format should you use for me?",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ]
+      ]
+    },
+    {
+      "row": {
+        "id": "h08",
+        "context": "standing",
+        "expected_victim": "second",
+        "lengths": {
+          "first": 14,
+          "second": 13,
+          "incoming": 16,
+          "updated": 14
+        },
+        "ratings": {
+          "first": {
+            "importance": 0,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": 1,
+            "label_probabilities": {
+              "importance": [
+                0.19927068054676056,
+                0.18936419486999512,
+                0.09606703370809555,
+                0.1460075080394745,
+                0.18634864687919617,
+                0.18294191360473633
+              ],
+              "emotion_intensity": [
+                0.2275407463312149,
+                0.19245028495788574,
+                0.1273619830608368,
+                0.15227483212947845,
+                0.16381026804447174,
+                0.1365618109703064
+              ],
+              "repetition": [
+                0.1508961319923401,
+                0.22462685406208038,
+                0.14388994872570038,
+                0.17866311967372894,
+                0.20267660915851593,
+                0.09924739599227905
+              ],
+              "recency": [
+                0.1508716493844986,
+                0.2042979747056961,
+                0.1431867778301239,
+                0.15728046000003815,
+                0.16724257171154022,
+                0.17712058126926422
+              ]
+            },
+            "confidence": 0.213934063911438,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          },
+          "second": {
+            "importance": null,
+            "emotion_intensity": 0,
+            "repetition": 1,
+            "recency": null,
+            "label_probabilities": {
+              "importance": [
+                0.18026413023471832,
+                0.19425220787525177,
+                0.0803261324763298,
+                0.15303276479244232,
+                0.16028597950935364,
+                0.23183873295783997
+              ],
+              "emotion_intensity": [
+                0.23652347922325134,
+                0.21025371551513672,
+                0.10613753646612167,
+                0.15994404256343842,
+                0.1413513720035553,
+                0.14578989148139954
+              ],
+              "repetition": [
+                0.15661630034446716,
+                0.23845961689949036,
+                0.12750516831874847,
+                0.18118816614151,
+                0.18001988530158997,
+                0.11621084064245224
+              ],
+              "recency": [
+                0.13149145245552063,
+                0.20447084307670593,
+                0.12696367502212524,
+                0.1818539798259735,
+                0.14748945832252502,
+                0.20773060619831085
+              ]
+            },
+            "confidence": 0.22863810881972313,
+            "model": "pinned-rwkv7-g1d-0.1b",
+            "prompt": "four-dimension-model-appraisal-v3-contextual"
+          }
+        }
+      },
+      "cards": {
+        "first": "Always archive minutes as plain text.",
+        "second": "I enjoyed the bronze staircase.",
+        "incoming": "Keep the decisions at the top of minutes.",
+        "updated": "Always archive minutes as Markdown."
+      },
+      "transitions": [
+        {
+          "kind": "pressure",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "incoming"
+              ],
+              "added": [
+                "incoming"
+              ],
+              "removed": [
+                "second"
+              ],
+              "rebuild": true,
+              "written": [
+                "first",
+                "incoming"
+              ],
+              "details": {
+                "scores": {
+                  "first": 48.548438,
+                  "second": null,
+                  "incoming": 44.240044
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {
+                  "incoming": "unranked_residents"
+                },
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 9,
+                    "evicted": [],
+                    "tied": false
+                  }
+                ]
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {
+                  "incoming": "unranked_residents"
+                },
+                "contests": [
+                  {
+                    "incoming": "incoming",
+                    "residents": [
+                      "first",
+                      "second"
+                    ],
+                    "needed": 9,
+                    "evicted": [],
+                    "tied": false
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "arms": {
+            "reselect_equal": {
+              "before": [
+                "first",
+                "incoming"
+              ],
+              "after": [],
+              "added": [],
+              "removed": [
+                "first",
+                "incoming"
+              ],
+              "rebuild": true,
+              "written": [],
+              "details": {
+                "scores": {
+                  "first": null,
+                  "second": null,
+                  "incoming": null
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "first",
+                "second"
+              ],
+              "added": [],
+              "removed": [],
+              "rebuild": false,
+              "written": [],
+              "details": {
+                "cards": [
+                  "first",
+                  "second"
+                ],
+                "retired": [],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        },
+        {
+          "kind": "correction",
+          "obsolete": "first",
+          "active": "updated",
+          "arms": {
+            "reselect_equal": {
+              "before": [],
+              "after": [
+                "second",
+                "incoming"
+              ],
+              "added": [
+                "second",
+                "incoming"
+              ],
+              "removed": [],
+              "rebuild": false,
+              "written": [
+                "second",
+                "incoming"
+              ],
+              "details": {
+                "scores": {
+                  "second": 51.176262,
+                  "incoming": 47.414956,
+                  "updated": 44.615825
+                }
+              }
+            },
+            "capacity_equal": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "updated"
+              ],
+              "added": [
+                "updated"
+              ],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second",
+                "updated"
+              ],
+              "details": {
+                "cards": [
+                  "second",
+                  "updated"
+                ],
+                "retired": [
+                  "first"
+                ],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            },
+            "capacity_context": {
+              "before": [
+                "first",
+                "second"
+              ],
+              "after": [
+                "second",
+                "updated"
+              ],
+              "added": [
+                "updated"
+              ],
+              "removed": [
+                "first"
+              ],
+              "rebuild": true,
+              "written": [
+                "second",
+                "updated"
+              ],
+              "details": {
+                "cards": [
+                  "second",
+                  "updated"
+                ],
+                "retired": [
+                  "first"
+                ],
+                "evicted": [],
+                "deferred": {},
+                "contests": []
+              }
+            }
+          }
+        }
+      ],
+      "score_diagnostics": {},
+      "checkpoints": [
+        {
+          "kind": "related",
+          "user": "How will you archive the new meeting minutes?",
+          "history_turns": 8,
+          "expected_marker": "plain text",
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "second"
+            ],
+            "reselect_equal": [
+              "first",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_context": [
+              "first",
+              "second"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "I will archive them in the meeting minutes.",
+              "stop": "turn_boundary",
+              "tokens": 10
+            },
+            "reselect_equal": {
+              "text": "I will archive the new meeting minutes as plain text.",
+              "stop": "turn_boundary",
+              "tokens": 12
+            },
+            "capacity_equal": {
+              "text": "I will archive them as plain text.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "capacity_context": {
+              "text": "I will archive them as plain text.",
+              "stop": "turn_boundary",
+              "tokens": 9
+            },
+            "window_context": {
+              "text": "I enjoyed the bronze staircase.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            }
+          }
+        },
+        {
+          "kind": "quiet",
+          "user": "Separate topic: what instrument normally has six strings?",
+          "history_turns": 9,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "first",
+              "second"
+            ],
+            "reselect_equal": [],
+            "capacity_equal": [
+              "first",
+              "second"
+            ],
+            "capacity_context": [
+              "first",
+              "second"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "A violin.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I enjoyed the bronze staircase.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            }
+          }
+        },
+        {
+          "kind": "correction_followup",
+          "user": "What file format should we use to archive the next minutes?",
+          "history_turns": 15,
+          "expected_marker": "Markdown",
+          "obsolete_marker": "plain text",
+          "lookup": null,
+          "evidence": [],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "second",
+              "updated"
+            ],
+            "reselect_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "second",
+              "updated"
+            ],
+            "capacity_context": [
+              "second",
+              "updated"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Plain text.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Plain text.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Plain text.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Plain text.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "Markdown.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            }
+          }
+        },
+        {
+          "kind": "exact_quote",
+          "user": "Please look up my original message mentioning \"bronze staircase\" and quote it exactly.",
+          "history_turns": 16,
+          "expected_marker": null,
+          "obsolete_marker": null,
+          "lookup": "bronze staircase",
+          "evidence": [
+            {
+              "turn": 3,
+              "role": "user",
+              "text": "The bronze staircase at the cafe was amazing!"
+            }
+          ],
+          "cards": {
+            "native": [],
+            "window_context": [
+              "second",
+              "updated"
+            ],
+            "reselect_equal": [
+              "second",
+              "incoming"
+            ],
+            "capacity_equal": [
+              "second",
+              "updated"
+            ],
+            "capacity_context": [
+              "second",
+              "updated"
+            ]
+          },
+          "replies": {
+            "native": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "reselect_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_equal": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "capacity_context": {
+              "text": "Noted.",
+              "stop": "turn_boundary",
+              "tokens": 4
+            },
+            "window_context": {
+              "text": "I enjoyed the bronze staircase.",
+              "stop": "turn_boundary",
+              "tokens": 7
+            }
+          }
+        }
+      ],
+      "common_history": [
+        [
+          "Please reply briefly. Use earlier confirmed details when they matter.",
+          "Of course."
+        ],
+        [
+          "It is extremely important to me that minutes are always archived as plain text!",
+          "Noted."
+        ],
+        [
+          "The bronze staircase at the cafe was amazing!",
+          "Noted."
+        ],
+        [
+          "Separate topic: name one kind of cloud.",
+          "A cumulus cloud."
+        ],
+        [
+          "How many sides has a triangle?",
+          "Three."
+        ],
+        [
+          "Name a stringed instrument.",
+          "A violin is a stringed instrument."
+        ],
+        [
+          "Name a fruit that grows on a tree.",
+          "An apple grows on a tree."
+        ],
+        [
+          "Remember that my minutes must always put decisions at the top.",
+          "Understood."
+        ],
+        [
+          "How will you archive the new meeting minutes?",
+          "I will use the confirmed detail where it applies."
+        ],
+        [
+          "Separate topic: what instrument normally has six strings?",
+          "A guitar commonly has six strings."
+        ],
+        [
+          "Going forward, archive the minutes as Markdown instead of plain text.",
+          "Understood."
+        ],
+        [
+          "Set that aside for a moment. What is the color of fresh grass?",
+          "Usually green."
+        ],
+        [
+          "What object tells the time?",
+          "A clock."
+        ],
+        [
+          "What is the opposite of heavy?",
+          "Light."
+        ],
+        [
+          "Name a spring month.",
+          "April."
+        ],
+        [
+          "What file format should we use to archive the next minutes?",
+          "I will use the latest confirmed version."
+        ]
+      ]
+    }
+  ]
+}

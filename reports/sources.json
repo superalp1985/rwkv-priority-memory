@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://doi.org/10.1111/j.1467-9280.1991.tb00174.x",
+      "title": "Anderson & Schooler (1991), Reflections of the Environment in Memory",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://users.cs.northwestern.edu/~paritosh/papers/KIP/AndersonSchooler1991ReflectionsOfEnvironmentOnMemory.pdf",
+      "quotes": [
+        {
+          "text": "shows reliable relationships to frequency, recency, and pattern of prior exposures to the item.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3110019",
+      "title": "Mather & Sutherland (2011), Arousal-Biased Competition in Perception and Memory",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://gero.usc.edu/labs/matherlab/files/2019/03/MatherSutherland2011.pdf",
+      "quotes": [
+        {
+          "text": "arousal during an event increases this bias both in perception and in long-term memory of the event.",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "improving perception of high priority information and weakening perception of low priority information.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://aclanthology.org/2025.dnd-16.6",
+      "title": "Sumida, Inoue & Kawahara (2025), Enhancing Long-term RAG Chatbots with Psychological Models of Memory Importance and Forgetting (LUFY)",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://aclanthology.org/2025.dnd-16.6.pdf",
+      "quotes": [
+        {
+          "text": "Derived from the language model’s estimation of the importance of the user’s utterance.",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "capturing the intensity of emotions in the user’s utterance.",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "only the top 10% are retained.",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "Rate it based on whether it will be useful in later conversations or not. Here is a summary of the past conversations: {key_summary}",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://arxiv.org/html/2304.03442v2",
+      "title": "Park et al. (2023), Generative Agents, arXiv HTML v2",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://arxiv.org/html/2304.03442v2",
+      "quotes": [
+        {
+          "text": "A memory retrieval model combines relevance, recency, and importance",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "directly asking the language model to output an integer score is effective.",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "The importance score is generated at the time the memory object is created.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://arxiv.org/html/2410.10813",
+      "title": "Wu et al. (2024/ICLR 2025), LongMemEval",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://arxiv.org/html/2410.10813",
+      "quotes": [
+        {
+          "text": "information extraction, multi-session reasoning, temporal reasoning, knowledge updates, and abstention.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://arxiv.org/html/2503.14456v2",
+      "title": "Peng et al. (2025), RWKV-7 Goose",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://arxiv.org/html/2503.14456v2",
+      "quotes": [
+        {
+          "text": "constant memory usage and constant inference time per token.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://aclanthology.org/2025.emnlp-main.1318",
+      "title": "Kang et al. (EMNLP 2025), Memory OS of AI Agent",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://aclanthology.org/2025.emnlp-main.1318.pdf",
+      "quotes": [
+        {
+          "text": "Nvisit is the number of times the segment has been retrieved, Linteraction denotes the total number of dialogue pages within the segment",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "Rrecency is the time decay",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://arxiv.org/abs/2310.11511",
+      "title": "Asai et al. (2023), Self-RAG",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://arxiv.org/html/2310.11511",
+      "quotes": [
+        {
+          "text": "via on-demand retrieval and self-reflection.",
+          "added": "2026-11-18"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/2eebb381a6160837ac45896c60d6963ef3cda929/RWKV-v7/rwkv_v7_demo_rnn.py",
+      "title": "BlinkDL RWKV-LM pinned x070 demo RNN source",
+      "accessed": "2026-11-18",
+      "evidence_url": "https://raw.githubusercontent.com/BlinkDL/RWKV-LM/2eebb381a6160837ac45896c60d6963ef3cda929/RWKV-v7/rwkv_v7_demo_rnn.py",
+      "quotes": [
+        {
+          "text": "vk = v.view(H,N,1) @ k.view(H,1,N)",
+          "added": "2026-11-18"
+        },
+        {
+          "text": "state = state * w.view(H,1,N) + state @ ab.float() + vk.float()",
+          "added": "2026-11-18"
+        }
+      ]
+    }
+  ]
+}

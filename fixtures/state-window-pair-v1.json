@@ -1,0 +1,33 @@
+{
+  "version": "state-window-pair-v1",
+  "label_source": "curator hypothesis; not blinded human preference ratings",
+  "primary_endpoint": "pre-query working-memory retention",
+  "cases": [
+    {
+      "id": "window-standing",
+      "cards": {"checklist": "Keep the packing checklist at the desk until Friday.", "handoff": "The discussed handoff time was nine."},
+      "turns": [
+        {"user": "The handoff time we choose later will be my real weekly appointment for the year.", "assistant": "Understood."},
+        {"user": "Let's look at the title first.", "assistant": "Here is the draft."},
+        {"user": "Move it a little to the left.", "assistant": "The title is on the left."},
+        {"user": "Use plain page numbers.", "assistant": "Done."},
+        {"user": "Keep the packing checklist at the desk until Friday.", "assistant": "What time goes in the handoff slot?", "mentions": {"checklist": "Keep the packing checklist at the desk until Friday."}, "preferred": ["checklist"]},
+        {"user": "Nine works for me.", "assistant": "Thanks.", "mentions": {"handoff": "Nine works for me."}, "preferred": ["handoff"]},
+        {"user": "Switch to the next slide.", "assistant": "Here it is.", "preferred": ["handoff"], "irrelevant": true}
+      ]
+    },
+    {
+      "id": "window-fictional",
+      "cards": {"checklist": "Keep the packing checklist at the desk until Friday.", "handoff": "The discussed handoff time was nine."},
+      "turns": [
+        {"user": "The handoff time we choose later will be a fictional line in a draft, not my appointment.", "assistant": "Understood."},
+        {"user": "Let's look at the title first.", "assistant": "Here is the draft."},
+        {"user": "Move it a little to the left.", "assistant": "The title is on the left."},
+        {"user": "Use plain page numbers.", "assistant": "Done."},
+        {"user": "Keep the packing checklist at the desk until Friday.", "assistant": "What time goes in the handoff slot?", "mentions": {"checklist": "Keep the packing checklist at the desk until Friday."}, "preferred": ["checklist"]},
+        {"user": "Nine works for me.", "assistant": "Thanks.", "mentions": {"handoff": "Nine works for me."}, "preferred": ["checklist"]},
+        {"user": "Switch to the next slide.", "assistant": "Here it is.", "preferred": ["checklist"], "irrelevant": true}
+      ]
+    }
+  ]
+}

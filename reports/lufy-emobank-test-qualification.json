@@ -1,0 +1,127 @@
+{
+  "scope": "published LUFY RoBERTa-large checkpoint qualification",
+  "checkpoint": {
+    "path": "/data/rwkv-priority-memory/models/lufy-roberta-large/best_roberta_large.pth",
+    "sha256": "9b5eb86922bb220678aa7362fb8a12fd7e7807cd7eb90c54cf2576d85fd4679d",
+    "bytes": 1421614063,
+    "load_state_dict_strict": true
+  },
+  "dataset": {
+    "path": "/data/rwkv-priority-memory/models/lufy-roberta-large/emobank.csv",
+    "split": "test",
+    "rows": 1000,
+    "sha256": "f215d038dbf940bb4b56b6d7e22352b92f002e1bdaef2abd995d4dd9574b2ca0",
+    "source": "RuiSumida/LUFY official emobank.csv"
+  },
+  "runtime": {
+    "python": "3.12.16",
+    "torch": "2.13.0+cu130",
+    "transformers": "5.22.2",
+    "device": "cuda",
+    "cuda": "13.0",
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "batch_size": 32,
+    "max_length": 128,
+    "base_model": "roberta-large"
+  },
+  "metrics": {
+    "valence": {
+      "n": 1000,
+      "pearson": 0.9222279761459735,
+      "spearman": 0.8952162323486204,
+      "mae": 0.10873471200466156,
+      "rmse": 0.14328233897686005,
+      "target_mean": 2.9780900478363037,
+      "prediction_mean": 2.97174072265625,
+      "target_std": 0.3451704680919647,
+      "prediction_std": 0.37007737159729004,
+      "prediction_min": 1.9459104537963867,
+      "prediction_max": 4.301882743835449
+    },
+    "arousal": {
+      "n": 1000,
+      "pearson": 0.7126973447139765,
+      "spearman": 0.6453902349219224,
+      "mae": 0.15412801504135132,
+      "rmse": 0.19723673164844513,
+      "target_mean": 3.033939838409424,
+      "prediction_mean": 3.12526798248291,
+      "target_std": 0.24581877887248993,
+      "prediction_std": 0.20396409928798676,
+      "prediction_min": 2.7813329696655273,
+      "prediction_max": 4.156159400939941
+    }
+  },
+  "domain_cases": [
+    {
+      "id": "importance_calm_short_task",
+      "text": "就按九点吧。",
+      "dimension": "emotion_intensity",
+      "expected": "low_or_ambiguous",
+      "source": "docs/APPRAISAL.md example; same wording is intentionally context-dependent",
+      "valence": 3.0309040546417236,
+      "arousal": 2.8984665870666504
+    },
+    {
+      "id": "importance_calm_long_term_rule",
+      "text": "以后每周一的交接时间固定为早上九点。",
+      "dimension": "emotion_intensity",
+      "expected": "low_or_ambiguous",
+      "source": "docs/APPRAISAL.md example; importance is not emotion intensity",
+      "valence": 3.0393104553222656,
+      "arousal": 2.9175987243652344
+    },
+    {
+      "id": "quoted_emotional_line",
+      "text": "我等这一天等了好久。",
+      "dimension": "emotion_intensity",
+      "expected": "do_not_treat_as_user_emotion_without_context",
+      "source": "docs/APPRAISAL.md quoted-line contrast",
+      "valence": 3.0445735454559326,
+      "arousal": 2.921328067779541
+    },
+    {
+      "id": "personal_high_stakes_event",
+      "text": "我刚收到录取通知，真的等这一天等了好久！",
+      "dimension": "emotion_intensity",
+      "expected": "higher_than_neutral_or_quoted_line",
+      "source": "docs/APPRAISAL.md user-event contrast",
+      "valence": 3.0147030353546143,
+      "arousal": 2.9375734329223633
+    },
+    {
+      "id": "neutral_acknowledgement",
+      "text": "收到，明白了。",
+      "dimension": "emotion_intensity",
+      "expected": "low",
+      "source": "project minimal neutral control",
+      "valence": 3.028773784637451,
+      "arousal": 2.9228594303131104
+    },
+    {
+      "id": "high_positive_arousal",
+      "text": "我终于拿到梦寐以求的录取通知了，太激动了！",
+      "dimension": "emotion_intensity",
+      "expected": "high",
+      "source": "project minimal high-arousal control",
+      "valence": 3.0058541297912598,
+      "arousal": 2.945004940032959
+    },
+    {
+      "id": "high_negative_arousal",
+      "text": "我失去最重要的人，痛苦得无法呼吸。",
+      "dimension": "emotion_intensity",
+      "expected": "high",
+      "source": "project minimal high-arousal control",
+      "valence": 3.0223491191864014,
+      "arousal": 2.9385828971862793
+    }
+  ],
+  "provenance": {
+    "checkpoint_card": "https://huggingface.co/RuiSumida/LUFY",
+    "dataset_card": "https://huggingface.co/datasets/RuiSumida/LUFY",
+    "implementation": "https://github.com/ryuichi-sumida/LUFY/blob/main/Code/roberta/inference_large.py",
+    "project_rubric": "docs/APPRAISAL.md"
+  },
+  "created_at_utc": "2026-11-19T09:58:40.014149+00:00"
+}

@@ -1,0 +1,62 @@
+{
+  "scope": "descriptive agreement check only; synthetic stimuli, not project gold labels",
+  "item_count": 12,
+  "dialogue_count": 10,
+  "complete_submissions": 0,
+  "complete_on_all_four_dimensions": 0,
+  "items_missing_rationale": 12,
+  "missing_rationale_by_dimension": {
+    "I": 12,
+    "E": 12,
+    "F": 12,
+    "R": 12
+  },
+  "dimensions": {
+    "I": {
+      "n_items": 0,
+      "unfilled_ratings": 12,
+      "both_X": 0,
+      "one_X": 0,
+      "numeric_pairs": 0,
+      "exact_agreement": 0,
+      "within_one_grade": 0,
+      "gap_ge_2": 0,
+      "numeric_mean_absolute_error": null
+    },
+    "E": {
+      "n_items": 0,
+      "unfilled_ratings": 12,
+      "both_X": 0,
+      "one_X": 0,
+      "numeric_pairs": 0,
+      "exact_agreement": 0,
+      "within_one_grade": 0,
+      "gap_ge_2": 0,
+      "numeric_mean_absolute_error": null
+    },
+    "F": {
+      "n_items": 0,
+      "unfilled_ratings": 12,
+      "both_X": 0,
+      "one_X": 0,
+      "numeric_pairs": 0,
+      "exact_agreement": 0,
+      "within_one_grade": 0,
+      "gap_ge_2": 0,
+      "numeric_mean_absolute_error": null
+    },
+    "R": {
+      "n_items": 0,
+      "unfilled_ratings": 12,
+      "both_X": 0,
+      "one_X": 0,
+      "numeric_pairs": 0,
+      "exact_agreement": 0,
+      "within_one_grade": 0,
+      "gap_ge_2": 0,
+      "numeric_mean_absolute_error": null
+    }
+  },
+  "disagreements": [],
+  "interpretation": "Agreement does not establish construct validity or model qualification. X means insufficient evidence, not grade zero."
+}

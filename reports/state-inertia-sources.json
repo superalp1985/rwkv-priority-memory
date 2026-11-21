@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/html/2503.14456v2",
+      "title": "Peng et al., RWKV-7 Goose, §3",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "a newly generalized formulation of the delta rule with vector-valued gating and in-context learning rates",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://github.com/BlinkDL/RWKV-LM/blob/2eebb381a6160837ac45896c60d6963ef3cda929/RWKV-v7/rwkv_v7_demo_rnn.py",
+      "title": "RWKV-LM · x070 TimeMix and forward",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "state = state * w.view(H,1,N) + state @ ab.float() + vk.float()",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "out = state.to(dtype=x.dtype) @ r.view(H,N,1)",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://github.com/BlinkDL/ChatRWKV/blob/2e2bb1cd390cefbedae0a89f4a343f6f754d6621/API_DEMO.py",
+      "title": "ChatRWKV · x070 split forward and state copy",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "Reuse the state (use deepcopy to clone it) when you are running the same ctx multiple times.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://github.com/BlinkDL/ChatRWKV/blob/2e2bb1cd390cefbedae0a89f4a343f6f754d6621/rwkv_pip_package/src/rwkv/model.py",
+      "title": "ChatRWKV · x070 Python state and readout",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "state: 0=att_x_prev 1=att_kv 2=ffn_x_prev",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "if state == None: state = self.generate_zero_state()",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://github.com/BlinkDL/ChatRWKV/blob/2e2bb1cd390cefbedae0a89f4a343f6f754d6621/API_DEMO_CHAT.py",
+      "title": "ChatRWKV · custom chat generation",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "out, model_state = model.forward(tokens[:CHUNK_LEN], model_state)",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://github.com/BlinkDL/Albatross/blob/545dd1870ea6cf424d7f7d4da16b7f87491405db/faster3a_2607/app4b.py",
+      "title": "Albatross · prefill and copy_state_to_batch",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "out = rwkv_model.forward(tokens, state).view(-1)",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "torch.cuda.synchronize() copy_state_to_batch(decode_state, state) logits = out.view(1, -1).repeat(B, 1)",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://github.com/BlinkDL/Albatross/blob/545dd1870ea6cf424d7f7d4da16b7f87491405db/faster3a_2607/rwkv7_fast_v3a.py",
+      "title": "Albatross · state layout and DeltaLog phase",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "Run one autoregressive token while preserving DeltaLog phase state.",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "cannot release DeltaLog logs inside a cycle",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://github.com/BlinkDL/RWKV-LM/blob/2eebb381a6160837ac45896c60d6963ef3cda929/README.md",
+      "title": "RWKV-LM · upstream chat and inference links",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "Chat demo code: https://github.com/BlinkDL/ChatRWKV/blob/main/API_DEMO_CHAT.py",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "Efficient inference: https://github.com/BlinkDL/Albatross",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "tuning the initial state",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://github.com/BlinkDL/RWKV-LM/issues/270",
+      "title": "RWKV-LM #270 · maintainer on shared prefill",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "先计算长doc，得到state s0 然后 s0 经过 q1 => s1 然后 s0 经过 q2 => s2",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://github.com/BlinkDL/ChatRWKV/issues/199",
+      "title": "ChatRWKV #199 · maintainer on custom generation",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "for custom generation",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "you can also take a look at https://github.com/BlinkDL/ChatRWKV/blob/main/API_DEMO_CHAT.py for custom generation",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://github.com/BlinkDL/ChatRWKV/pull/87",
+      "title": "ChatRWKV PR #87 · recover state after role marker",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "When Alice: or Bob: occurs in reply, recover the chat state.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://github.com/BlinkDL/RWKV-LM/issues/349",
+      "title": "RWKV-LM #349 · contributor experiments and maintainer pointers",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "causal state probe, multi-slot capacity",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "and please check https://github.com/cgisky1980/rwkv7-state-embedding too",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://github.com/cgisky1980/rwkv7-state-embedding/blob/e51c24ec2a3491c94cec1e4aca503fe298488df7/README.md",
+      "title": "Community · RWKV-7 state semantic embedding",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "how to extract semantic embeddings from RWKV-7 internal states",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://github.com/BlinkDL/RWKV-LM/issues/353",
+      "title": "RWKV-LM #353 · carried-state numerical report",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "The original `.pth` is loaded directly. There are no generated tokens, adapters, resets, or inference-time state modifications.",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "when state is carried through a periodic JSON stream",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://aclanthology.org/2025.dnd-16.6",
+      "title": "Sumida et al., LUFY · importance judged from dialogue",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "Rate it based on whether it will be useful in later conversations or not.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://github.com/BlinkDL/ChatRWKV/blob/2e2bb1cd390cefbedae0a89f4a343f6f754d6621/v2/chat.py",
+      "title": "ChatRWKV v2 · save/load dialogue state",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "all_state[n]['rnn'] = copy.deepcopy(model_state)",
+          "added": "2026-11-19"
+        }
+      ]
+    }
+  ]
+}

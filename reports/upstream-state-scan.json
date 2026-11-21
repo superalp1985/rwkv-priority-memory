@@ -1,0 +1,80 @@
+{
+  "scope": "public GitHub REST issues listing with PRs included, all states, default repos only; title and body regex screens; selected threads checked; a limited duplication survey",
+  "queries": {
+    "scoring": "apprais|salien|importan.{0,25}(scor|rank)|(scor|rank).{0,25}(importan|memor(y|ies))|retention polic|long[- ]term memor|记忆.{0,7}(评分|打分|排序)|记忆惯性|工作记忆",
+    "branch": "\\b(snapshot|checkpointing|forking|branching|rollback)\\b|deepcopy|state.{0,10}(recover|clon|cach)|pre.?fill.{0,14}cach|前缀|状态.{0,5}恢复",
+    "state probe": "state.?(probe|tuning|embedding|trajectory)|state.{0,10}disposition|carried.state|state.{0,10}overflow"
+  },
+  "repositories": [
+    {
+      "repo": "BlinkDL/RWKV-LM",
+      "branch": "main",
+      "sha": "2eebb381a6160837ac45896c60d6963ef3cda929",
+      "time": "2026-11-04T10:19:04Z",
+      "fetched_utc": "2026-11-19T01:03:40.370046+00:00",
+      "endpoint": "https://api.github.com/repos/BlinkDL/RWKV-LM/issues?state=all&per_page=100",
+      "pages": 4,
+      "unique_issue_and_pr_entries": 333,
+      "prs_included": 59,
+      "open_prs": 31,
+      "matched_entry_numbers": {
+        "scoring": [],
+        "branch": [
+          270,
+          229,
+          138,
+          35
+        ],
+        "state probe": [
+          353,
+          349,
+          338,
+          246
+        ]
+      }
+    },
+    {
+      "repo": "BlinkDL/ChatRWKV",
+      "branch": "main",
+      "sha": "2e2bb1cd390cefbedae0a89f4a343f6f754d6621",
+      "time": "2026-07-19T19:09:29Z",
+      "fetched_utc": "2026-11-19T01:03:32.129980+00:00",
+      "endpoint": "https://api.github.com/repos/BlinkDL/ChatRWKV/issues?state=all&per_page=100",
+      "pages": 3,
+      "unique_issue_and_pr_entries": 215,
+      "prs_included": 90,
+      "open_prs": 26,
+      "matched_entry_numbers": {
+        "scoring": [],
+        "branch": [
+          87
+        ],
+        "state probe": []
+      }
+    },
+    {
+      "repo": "BlinkDL/Albatross",
+      "branch": "main",
+      "sha": "545dd1870ea6cf424d7f7d4da16b7f87491405db",
+      "time": "2026-09-10T07:53:25Z",
+      "fetched_utc": "2026-11-19T01:03:17.849036+00:00",
+      "endpoint": "https://api.github.com/repos/BlinkDL/Albatross/issues?state=all&per_page=100",
+      "pages": 1,
+      "unique_issue_and_pr_entries": 11,
+      "prs_included": 9,
+      "open_prs": 3,
+      "matched_entry_numbers": {
+        "scoring": [],
+        "branch": [],
+        "state probe": []
+      }
+    }
+  ],
+  "related_reviewed": [
+    "BlinkDL/RWKV-LM#270",
+    "BlinkDL/RWKV-LM#349",
+    "BlinkDL/RWKV-LM#353",
+    "BlinkDL/ChatRWKV#199",
+    "BlinkDL/ChatRWKV#87"
+  ]
+}

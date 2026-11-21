@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://docs.typesafe.ai/concepts/state.md",
+      "title": "TypeSafe Jev: one supplied state, independent typed judgments",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "All questions see the same state and are evaluated independently.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://docs.typesafe.ai/primitives/score.md",
+      "title": "TypeSafe Jev: ordered score criteria and label readouts",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "The score is a probability-weighted mean of the level numbers.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://docs.typesafe.ai/cookbooks/basic_memory.md",
+      "title": "TypeSafe Jev: simple memory wrapper",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "Each Jev request sees only the state you send it.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/pdf/2610.08829",
+      "title": "Zhang and Yu: Emo-Jev, sections 3.2–3.3",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "an evaluative attitude, its polarity, and its intensity.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://github.com/libingzheren/Jev-Mem/blob/7ab0c73c6d8f4f611ad252c1e6ba8083f8df0e44/README.md",
+      "title": "Jev-Mem: roles of memory control and answering",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "relations, while code handles deterministic links such as timestamp ordering.",
+          "added": "2026-11-19"
+        }
+      ]
+    }
+  ]
+}

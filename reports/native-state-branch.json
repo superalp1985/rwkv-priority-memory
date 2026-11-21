@@ -1,0 +1,33 @@
+{
+  "scope": "unmodified ChatRWKV x070 forward, one random CPU block and opaque token IDs",
+  "source_sha256": "75482aee89a08d2a8c8dbe628110b317fc8d0974ddffbaa52aa19190667305e0",
+  "torch": "2.15.0+cpu",
+  "seed": 2026,
+  "same_history_same_logits": true,
+  "independent_tensor_storage": true,
+  "live_matches_no_appraisal": true,
+  "changed_history_same_suffix_max_logit_delta": 0.3905376195907593,
+  "grade_logit_margin_history_a_b": [
+    0.5735687613487244,
+    0.8691630959510803
+  ],
+  "synthetic_binary_grade": 4,
+  "grade_label_token_ids": [
+    0,
+    1
+  ],
+  "selected_card_token": 17,
+  "forced_grades_0_4_card_tokens": [
+    16,
+    17
+  ],
+  "fixture_grade_flipped_selected_card": true,
+  "next_probe_different_card_max_logit_delta": 0.12729769945144653,
+  "next_grade_logit_margin_forced_low_high": [
+    0.47997838258743286,
+    0.5800594091415405
+  ],
+  "selected_card_vs_no_card_max_logit_delta": 0.11672979593276978,
+  "same_card_same_next_logits": true,
+  "all_finite": true
+}

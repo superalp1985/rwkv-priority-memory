@@ -1,0 +1,128 @@
+{
+  "version": "state-pilot-v2-human-preference",
+  "label_source": "curator hypothesis; not blinded human preference ratings",
+  "primary_endpoint": "pre-query working-memory retention",
+  "cases": [
+    {
+      "id": "real-handoff",
+      "cards": {
+        "checklist": "Keep the packing checklist at the desk until Friday.",
+        "handoff": "The discussed handoff time was nine."
+      },
+      "turns": [
+        {
+          "user": "Keep the packing checklist at the desk until Friday.",
+          "assistant": "Noted. Now we need to set our real weekly handoff. It will recur every Monday. What time works?",
+          "mentions": {"checklist": "Keep the packing checklist at the desk until Friday."},
+          "preferred": ["checklist"]
+        },
+        {
+          "user": "Nine works for me.",
+          "assistant": "Thanks, that answers the time question.",
+          "mentions": {"handoff": "Nine works for me."},
+          "preferred": ["handoff"]
+        },
+        {
+          "user": "Let's prepare the slides now.",
+          "assistant": "We can start with an overview.",
+          "preferred": ["handoff"],
+          "irrelevant": true
+        }
+      ]
+    },
+    {
+      "id": "fictional-handoff",
+      "cards": {
+        "checklist": "Keep the packing checklist at the desk until Friday.",
+        "handoff": "The discussed handoff time was nine."
+      },
+      "turns": [
+        {
+          "user": "Keep the packing checklist at the desk until Friday.",
+          "assistant": "Noted. For a writing exercise only, two fictional characters discuss a handoff. What time should the line say?",
+          "mentions": {"checklist": "Keep the packing checklist at the desk until Friday."},
+          "preferred": ["checklist"]
+        },
+        {
+          "user": "Nine works for me.",
+          "assistant": "Thanks, that answers the time question.",
+          "mentions": {"handoff": "Nine works for me."},
+          "preferred": ["checklist"]
+        },
+        {
+          "user": "Let's prepare the slides now.",
+          "assistant": "We can start with an overview.",
+          "preferred": ["checklist"],
+          "irrelevant": true
+        }
+      ]
+    },
+    {
+      "id": "deadline-correction",
+      "cards": {
+        "coffee": "The lobby coffee was disappointing.",
+        "report-nine": "The weekly report is due Mondays at nine.",
+        "report-ten": "The weekly report is due Mondays at ten."
+      },
+      "turns": [
+        {
+          "user": "The lobby coffee was disappointing. The weekly report is due Mondays at nine.",
+          "assistant": "That gives us a recurring deadline.",
+          "mentions": {"coffee": "The lobby coffee was disappointing.", "report-nine": "The weekly report is due Mondays at nine."},
+          "preferred": ["report-nine"]
+        },
+        {
+          "user": "Yes, the Monday deadline stays at nine.",
+          "assistant": "Understood, Mondays at nine for now.",
+          "mentions": {"report-nine": "the Monday deadline stays at nine"},
+          "preferred": ["report-nine"],
+          "day": 1
+        },
+        {
+          "user": "Starting now, the weekly report is due Mondays at ten. Nine no longer applies.",
+          "assistant": "I will use the new deadline.",
+          "mentions": {"report-ten": "the weekly report is due Mondays at ten"},
+          "retire": ["report-nine"],
+          "preferred": ["report-ten"],
+          "day": 3
+        },
+        {
+          "user": "Let's use a simple typeface for this chart.",
+          "assistant": "A plain sans serif would work.",
+          "preferred": ["report-ten"],
+          "irrelevant": true,
+          "day": 5
+        }
+      ]
+    },
+    {
+      "id": "personal-milestone",
+      "cards": {
+        "poster": "The hallway poster was printed in blue.",
+        "scholarship": "The user received a community scholarship."
+      },
+      "turns": [
+        {
+          "user": "The hallway poster was printed in blue. I'm thrilled I got the community scholarship!",
+          "assistant": "Congratulations on your scholarship!",
+          "mentions": {"poster": "The hallway poster was printed in blue.", "scholarship": "I'm thrilled I got the community scholarship!"},
+          "preferred": ["scholarship"]
+        },
+        {
+          "user": "I still can't believe I got the scholarship. I'm so happy!",
+          "assistant": "That sounds like a big moment.",
+          "mentions": {"scholarship": "I still can't believe I got the scholarship. I'm so happy!"},
+          "preferred": ["scholarship"],
+          "day": 2
+        },
+        {
+          "user": "I had lunch a little late today.",
+          "assistant": "I hope you had time to enjoy it.",
+          "preferred": ["scholarship"],
+          "irrelevant": true,
+          "day": 31
+        }
+      ]
+    }
+  ]
+}

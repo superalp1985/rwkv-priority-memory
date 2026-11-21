@@ -1,0 +1,92 @@
+{
+  "scope": "invented dialogue, manually supplied rating; no model",
+  "reopened_equal": true,
+  "assistant_counted": false,
+  "archived_turns": 3,
+  "history": [
+    {
+      "assessment": {
+        "confidence": 0.8,
+        "emotion": 0.25,
+        "importance": 0.75,
+        "model": "synthetic-fixture",
+        "prompt": "appraisal-v1",
+        "quote": "nine",
+        "reason_code": "commitment",
+        "source_turn": "u1"
+      },
+      "distinct_user_mentions": 1,
+      "emotion_intensity": 0.25,
+      "explicit_user_importance": null,
+      "first_seen_at": "2026-01-01T00:00:00+00:00",
+      "importance": 0.75,
+      "last_user_mention_at": "2026-01-01T00:00:00+00:00",
+      "memory_id": "weekly-handoff:v1",
+      "model_assessed_importance": 0.75,
+      "model_confidence": 0.8,
+      "policy_version": "priority-v1-proposal",
+      "priority_score": 52.777778,
+      "recency": 1.0,
+      "repetition": 0.111111,
+      "scored_at": "2026-01-01T00:00:00+00:00",
+      "trigger": "mention",
+      "trigger_turn": "u1"
+    },
+    {
+      "assessment": {
+        "confidence": 0.8,
+        "emotion": 0.25,
+        "importance": 0.75,
+        "model": "synthetic-fixture",
+        "prompt": "appraisal-v1",
+        "quote": "nine",
+        "reason_code": "commitment",
+        "source_turn": "u1"
+      },
+      "distinct_user_mentions": 1,
+      "emotion_intensity": 0.25,
+      "explicit_user_importance": null,
+      "first_seen_at": "2026-01-01T00:00:00+00:00",
+      "importance": 0.75,
+      "last_user_mention_at": "2026-01-01T00:00:00+00:00",
+      "memory_id": "weekly-handoff:v1",
+      "model_assessed_importance": 0.75,
+      "model_confidence": 0.8,
+      "policy_version": "priority-v1-proposal",
+      "priority_score": 40.277778,
+      "recency": 0.5,
+      "repetition": 0.111111,
+      "scored_at": "2026-01-31T00:00:00+00:00",
+      "trigger": "clock",
+      "trigger_turn": null
+    },
+    {
+      "assessment": {
+        "confidence": 0.8,
+        "emotion": 0.25,
+        "importance": 0.75,
+        "model": "synthetic-fixture",
+        "prompt": "appraisal-v1",
+        "quote": "nine",
+        "reason_code": "commitment",
+        "source_turn": "u1"
+      },
+      "distinct_user_mentions": 2,
+      "emotion_intensity": 0.25,
+      "explicit_user_importance": null,
+      "first_seen_at": "2026-01-01T00:00:00+00:00",
+      "importance": 0.75,
+      "last_user_mention_at": "2026-01-31T00:00:00+00:00",
+      "memory_id": "weekly-handoff:v1",
+      "model_assessed_importance": 0.75,
+      "model_confidence": 0.8,
+      "policy_version": "priority-v1-proposal",
+      "priority_score": 55.0,
+      "recency": 1.0,
+      "repetition": 0.2,
+      "scored_at": "2026-01-31T00:00:00+00:00",
+      "trigger": "mention",
+      "trigger_turn": "u2"
+    }
+  ]
+}

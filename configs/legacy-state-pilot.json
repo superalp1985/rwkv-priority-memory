@@ -1,0 +1,50 @@
+{
+  "status": "proposed protocol, not an engine config or a measured result",
+  "base_model": {
+    "repo": "BlinkDL/rwkv-7-world",
+    "revision": "2c0ebae3b3a784e690e3d46bf545ecf44deceb10",
+    "file": "RWKV-x070-World-0.4B-v2.9-20250107-ctx4096.pth",
+    "sha256": "c08cf602b33e59a5717b8f0cafaf7f04c50c1c67166e477aa2f47c5ca180da4a",
+    "bytes": 901794466,
+    "upstream_repo": "BlinkDL/RWKV-LM",
+    "upstream_revision": "2eebb381a6160837ac45896c60d6963ef3cda929",
+    "vocab_path_in_upstream": "RWKV-v7/rwkv_vocab_v20230424.txt",
+    "vocab_sha256": "e6dee3d4e31b4d5c40ac99508ac6c701ceef4bed681bf2167ce9a908552bca89",
+    "batch_size": 1,
+    "weight_dtype": "float16",
+    "wkv_accumulator_dtype": "float32"
+  },
+  "policy": {
+    "default": "off",
+    "candidate": "post_write_trace",
+    "strength": 0.10,
+    "half_life_tokens": 64,
+    "mask": "all_heads",
+    "importance_source": "explicit_user_markup_or_prefix_rule",
+    "write_scale": 1.0,
+    "emotion_weight": 0.0,
+    "density_weight": 0.0
+  },
+  "retrieval": {
+    "store_by_default": false,
+    "inject_by_default": false,
+    "retrieval_mode_for_first_comparison": "forced_on_all_questions",
+    "top_k": 3,
+    "max_injected_tokens": 256,
+    "lexical": "SQLite FTS5",
+    "dense_candidate": "FAISS CPU"
+  },
+  "pilot": {
+    "seeds": [11, 29, 47],
+    "evidence_to_question_gaps_tokens": [128, 1024, 4096],
+    "max_generated_tokens": 32,
+    "decoding": "greedy",
+    "arms": ["native", "scheduler_only", "retrieval_only", "scheduler_and_retrieval"],
+    "oracle_in_context_floor_em": 0.60,
+    "primary_scheduler_em_delta_pp_min": 5,
+    "paired_95ci_lower_gt_pp": 0,
+    "short_context_ppl_ratio_max": 1.02,
+    "decode_throughput_ratio_min": 0.95,
+    "decode_p95_itl_ratio_max": 1.05
+  }
+}

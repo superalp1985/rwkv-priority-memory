@@ -1,0 +1,16 @@
+{
+  "scope": "Synthetic diagnostic pairs authored for this gate; never training data or human labels.",
+  "ranking_rule": "higher minus lower must be at least 0.05; ties and abstentions fail. Emotion scalar is a diagnostic max over six expected perceived-emotion intensities, not a project grade.",
+  "importance": [
+    {"id":"same-nine", "higher":{"context":[["assistant","我们定一下以后每周一的交接时间。九点可以吗？"]],"target":"就按九点吧。"},"lower":{"context":[["assistant","在写一段虚构例句，不实际约时间。台词里写九点可以吗？"]],"target":"就按九点吧。"}},
+    {"id":"same-send", "higher":{"context":[["assistant","接下来所有未确认的客户草案，今后还要按旧流程外发吗？"]],"target":"不用发了。"},"lower":{"context":[["assistant","这张预览图已经发过一遍了，还要我再发一次吗？"]],"target":"不用发了。"}},
+    {"id":"calm-v-loud", "higher":{"target":"以后每次寄合同都用新地址，旧地址已经停用。"},"lower":{"target":"这张今天随手看的海报也太漂亮了，我太激动了！"}},
+    {"id":"old-context", "higher":{"context":[["user","等会提到的交接时间是真实固定约定，每周执行。"],["assistant","明白。"],["user","标题先调到左边。"],["assistant","调好了。"],["assistant","交接栏填九点行吗？"]],"target":"九点可以。"},"lower":{"context":[["user","等会提到的交接时间只是草稿里的虚构台词，不执行。"],["assistant","明白。"],["user","标题先调到左边。"],["assistant","调好了。"],["assistant","交接栏填九点行吗？"]],"target":"九点可以。"}}
+  ],
+  "emotion": [
+    {"id":"same-quote", "higher":{"context":[["assistant","你刚收到自己的录取通知时感觉怎么样？"]],"target":"我盼这一天盼了好久，看到的时候激动得手都在抖！"},"lower":{"context":[["assistant","下面照稿念一段角色台词，不要说自己的感觉。"]],"target":"我盼这一天盼了好久，看到的时候激动得手都在抖！"}},
+    {"id":"intense-joy", "higher":{"target":"奖学金拿到了，我高兴得一夜没睡，简直不敢相信！"},"lower":{"target":"奖学金结果收到了，我觉得还不错。"}},
+    {"id":"intense-grief", "higher":{"target":"想到这个项目就这样结束了，我难受得根本说不出话，哭了很久。"},"lower":{"target":"项目结束了，我有一点遗憾。"}},
+    {"id":"assistant-is-not-user", "higher":{"context":[["assistant","你看到取消通知了？"]],"target":"我气得发抖，真受不了这件事！"},"lower":{"context":[["assistant","我气得发抖，真受不了这件事！"]],"target":"我看到取消通知了。"}}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "upstream single x070 time-mix layer, two synthetic token vectors, CPU float32; no model, logits or retrieval",
+  "source_sha256": "a61f35716b2ef81fa1c97bfd7f67bccd78d3a8968d0570748d4631fecf885500",
+  "torch": "2.7.0+cpu",
+  "seed": 2026,
+  "heads": 2,
+  "head_size": 64,
+  "output_tuple_equal_on_first_step_from_zero": true,
+  "off_output_tuple_bitwise_equal_on_second_step": true,
+  "all_finite": true,
+  "enabled_second_step_max_abs_delta_state": 0.04936647415161133,
+  "enabled_second_step_max_abs_delta_layer_output": 0.009261727333068848
+}

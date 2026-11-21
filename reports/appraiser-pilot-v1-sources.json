@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/html/2610.33015v1",
+      "title": "SLICE-Mem 论文全文，arXiv HTML v1",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "human-annotated set of 150 turns",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "The Gate uses 2000 hard-labeled examples, with 1600 for training and 400 for validation, and is independently evaluated on 150 human-annotated turns.",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "binary memory-admission labels obtained from consensus among multiple LLM teachers and released annotations",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://raw.githubusercontent.com/geniesinc/Memora/a6493188efc836d6511ed5e4163fe3ba87da30ff/data/README.md",
+      "title": "Memora 官方数据 README，固定提交",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "The three `<period>` buckets correspond to the three temporal durations in the paper.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://raw.githubusercontent.com/geniesinc/Memora/a6493188efc836d6511ed5e4163fe3ba87da30ff/data_generation/README.md",
+      "title": "Memora 官方数据生成说明，固定提交",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 4,
+      "url": "https://aclanthology.org/2025.acl-long.436.pdf",
+      "title": "Mather & Sutherland 情绪唤醒理论论文（ACL记录）",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 5,
+      "url": "https://github.com/emotion-analysis-project/SemEval2025-Task11/blob/513a7e8bef7ef6370ac416ced97efba338c47c97/README.md",
+      "title": "BRIGHTER 官方项目说明，固定提交",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 6,
+      "url": "https://huggingface.co/datasets/brighter-dataset/BRIGHTER-emotion-intensities/tree/08a5d61d3fc33036f97c8c76a61ff8d6f02f5157/chn",
+      "title": "BRIGHTER 官方中文 split 页面，固定 revision",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 7,
+      "url": "https://github.com/ryuichi-sumida/LUFY/tree/e0695216d52a38ef39ec2f91708d324877e328bd",
+      "title": "LUFY 官方实现固定提交",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 8,
+      "url": "https://huggingface.co/datasets/RuiSumida/LUFY",
+      "title": "LUFY 数据集卡",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 9,
+      "url": "https://huggingface.co/FacebookAI/xlm-roberta-base/tree/e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+      "title": "FacebookAI XLM-R base 固定 revision",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 10,
+      "url": "https://aclanthology.org/2025.semeval-1.327.pdf",
+      "title": "SemEval-2025 Task 11 正式论文 PDF",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "intensity levels ranging from 0 to 3",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://arxiv.org/abs/2610.33015",
+      "title": "SLICE-Mem: Salience-Gated Lightweight Information Curation for Efficient LLM Agent Memory",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 12,
+      "url": "https://aclanthology.org/2025.semeval-1.327",
+      "title": "SemEval-2025 Task 11: Bridging the Gap in Text-Based Emotion Detection",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 13,
+      "url": "https://arxiv.org/abs/2505.23018",
+      "title": "EmotionTalk: An Interactive Chinese Multimodal Emotion Dataset With Rich Annotations",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 14,
+      "url": "https://aclanthology.org/2026.findings-acl.440",
+      "title": "EmotionTalk: An Interactive Chinese Multimodal Emotion Dataset With Rich Annotations",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 15,
+      "url": "https://huggingface.co/datasets/BAAI/Emotiontalk",
+      "title": "BAAI EmotionTalk dataset card",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 16,
+      "url": "https://github.com/NKU-HLT/EmotionTalk",
+      "title": "NKU-HLT EmotionTalk repository",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 17,
+      "url": "https://arxiv.org/html/2505.23018v3",
+      "title": "EmotionTalk paper arXiv v3",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "evaluate the emotional state as -2 (strongly negative), -1 (weakly negative), 0 (neutral), 1 (weakly positive), or 2 (strongly positive).",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "under the CC BY-NC 4.0 license, which prohibits commercial use",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "License: CC BY-NC-ND 4.0",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "The dataset is released under the CC BY-NC 4.0 license, which prohibits commercial use",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://huggingface.co/api/datasets/BAAI/Emotiontalk/revision/adbc17fc944e8cf2873643906160c6ca0259ab61",
+      "title": "EmotionTalk 官方 Hugging Face revision 元数据",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 19,
+      "url": "https://aclanthology.org/2025.dnd-16.6",
+      "title": "LUFY 正式论文 ACL Anthology 记录",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "importance of the following conversation.",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "three annotators independently labeled each utterance as either important or unimportant",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "The Fleiss’ kappa score was 0.42 for both datasets",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "url": "https://api.github.com/repos/zhibao-dev/Learning-Multi-Factor-Memory/contents/README.md",
+      "title": "Learning Multi-Factor Memory 官方代码仓库 README",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "The encode → forget → retrieve → answer pipeline is non-differentiable",
+          "added": "2026-11-19"
+        },
+        {
+          "text": "pipeline is non-differentiable, so weights",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://huggingface.co/api/models/RWKV/RWKV7-G1l-1.5B-20261031/revision/5a3308bf1f3523b669c2f6121925019150ea5651",
+      "title": "RWKV-7 G1l 1.5B 官方发布元数据（固定 revision）",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 22,
+      "url": "https://huggingface.co/datasets/BAAI/Emotiontalk/resolve/adbc17fc944e8cf2873643906160c6ca0259ab61/README.md",
+      "title": "EmotionTalk 官方数据集卡固定 revision",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "The dataset is released under a **CC BY-NC-SA 4.0 license**, meaning it is available for non-commercial use.",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://huggingface.co/api/models/FacebookAI/xlm-roberta-base/revision/e73636d4f797dec63c3081bb6ed5c7b0bb3f2089",
+      "title": "XLM-R 官方模型固定 revision API",
+      "accessed": "2026-11-19"
+    },
+    {
+      "id": 24,
+      "url": "https://raw.githubusercontent.com/zhibao-dev/Learning-Multi-Factor-Memory/0f9dff3ad9ce273b8c20cd400eed7a02f21569e8/README.md",
+      "title": "Learning Multi-Factor Memory 官方 README 固定提交",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "The encode → forget → retrieve → answer pipeline is non-differentiable, so weights",
+          "added": "2026-11-19"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "url": "https://huggingface.co/FacebookAI/xlm-roberta-base/resolve/e73636d4f797dec63c3081bb6ed5c7b0bb3f2089/README.md",
+      "title": "XLM-R 官方模型卡固定 revision",
+      "accessed": "2026-11-19",
+      "quotes": [
+        {
+          "text": "XLM-RoBERTa model pre-trained on 2.5TB of filtered CommonCrawl data containing 100 languages.",
+          "added": "2026-11-19"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": "priority-v2-model-appraised",
+  "status": "candidate policy; archive and recall service options are design only",
+  "evaluation": {"primary": "human preference for what to retain and when to use it", "pilot_labels": "curator hypotheses only", "secondary": "question-answer accuracy"},
+  "weights": {"importance": 0.25, "emotion_intensity": 0.25, "user_repetition": 0.25, "recency": 0.25},
+  "importance": {"appraiser": "same local dialogue model on a separate state", "scale": [0, 1, 2, 3, 4], "normalize_by": 4, "explicit_floor": "supported by deterministic ranking API but not enabled in fixed-weight replay", "on_invalid": "pending; never turn missing evidence into zero"},
+  "emotion_intensity": {"appraiser": "same model on a clean state fork", "basis": "intensity of the user's own expression; no type or valence"},
+  "repetition": {"appraiser": "same model on a clean state fork", "evidence": "distinct original user turns for the same item version, with quotes and timestamps"},
+  "recency": {"appraiser": "same model on a clean state fork", "evidence": "last independent user mention and assessment time in UTC"},
+  "seed": {"pilot_budget_tokens_including_markup": 24, "proposed_service_budget": 256, "proposed_service_card_max": 48, "selection": "descending unrounded score then item id; keep fitting prefix"},
+  "recall": {"default": "off unless historical evidence is needed", "max_passages": 3, "evidence_budget_tokens": 256},
+  "archive": {"default_requires_consent": true, "independent_of_score": true, "initial_index": "sqlite_fts5"}
+}
